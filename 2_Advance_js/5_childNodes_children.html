@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" id="myid">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Node</title>
+</head>
+<body id='myid1'>
+    <h1 id="myid2" class='myclass'>
+        we are learning JS 
+        <!-- This is comment -->
+     </h1>
+    <p id="myid3">I am Paragraph</p>
+
+
+    <script>
+        // the childNodes read-only property returns NodeList of child nodes of the given element where the first chile node is assignewd index 0.
+        // childNodes includes all child nodes, including non-element nodes like text and comment nodes.
+        // whitespave inside element is considered as text, and text is considered as nodes.
+        //any whitespace will create a #text node, from a single space to multuple spaces,retuens, tabs ans so on
+        //we can use the length property of the NodeList Object
+
+        var elm = document.getElementById('myid1')
+
+        // console.log(elm.childNodes)  // NodeList(6)
+        // console.log(elm.children)   // HTMLCollection(3)
+
+    //=============== The Difference Between an HTMLCollection and a NodeList==============
+    // An HTMLCollection is a collection of HTML elements.
+
+    // A NodeList is a collection of document nodes.
+
+    // console.log(elm.childNodes.length)
+    // console.log(elm.children.length)
+
+    // for(let i = 0; i <elm.childNodes.length; i++ ){
+    //     console.log(elm.childNodes[i])
+    // }
+
+    // for(let i = 0; i <elm.children.length; i++ ){
+    //     console.log(elm.children[i])
+    // }
+
+        console.log(elm.children[0].textContent)
+        elm.children[0].textContent = 'This is added from js';
+        console.log(elm.children[0].textContent);
+        
+
+    </script>
+</body>
+</html>

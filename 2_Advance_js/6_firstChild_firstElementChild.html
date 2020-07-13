@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" id="myid">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Node</title>
+</head>
+<body id='myid1'>
+    <h1 id="myid2" class='myclass'>
+        we are learning JS 
+        <!-- This is comment -->
+     </h1>
+    <p id="myid3">I am Paragraph</p>
+
+
+    <script>
+    let elm = document.getElementById('myid1');
+    // console.log(elm.firstChild);    // #text
+    // console.log(elm.firstElementChild);
+
+    // console.log(elm.firstChild.textContent);    // blank space
+    // console.log(elm.firstElementChild.textContent);
+
+    // elm.firstChild.textContent = 'Hello world'
+    // console.log(elm.firstChild.textContent);    // hello World
+
+
+    //  similar is lastChild and lastElementChild
+    // similar is previousSibling and previousElementSibling
+    //  similar is nextSibling and nextElementSibling
+
+    </script>
+</body>
+</html>

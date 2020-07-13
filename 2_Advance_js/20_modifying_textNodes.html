@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mydiv">
+        <h2 id='myh2'>Hello world</h2>
+    </div>
+
+
+    <script>
+// ===============properties=======================
+// data [data property is used to set or return the value of a text node and comment node objects]
+//length [textNode.length]
+
+//===============methods==========================
+// 1. appendData(string) [append the passed string to the end of the text node and comment node]
+// 2. deleteData(start, length)
+// 3. insertData(start, string)
+// 4. replaceData(start, length, string)
+// 5. splitText(start) [breaks the text node into two nodes at the specified start index, keeping both nodes in the trees as siblings. it returned right side of the split in a new text node and leaves the left side in the original.]
+// 6. substringData(start, length)
+
+    let elm = document.getElementById('myh2');
+    
+    // we first have to reach to the text node
+    let textNode = elm.firstChild
+    // console.log(textNode)
+
+    //======================Properties===================================
+    // console.log(textNode.length)
+    // console.log(textNode.data)   // data without quatation mark
+    // // setting the data
+    // textNode.data = ' I am new data'
+    // console.log(textNode)
+
+
+//=======================Method==========================================
+
+    // let newtext = textNode.appendData(' append text');
+    // console.log(newtext)  // it returned null
+    // console.log(textNode)
+
+    // let deleteData = textNode.deleteData(0, 5);
+    // console.log(deleteData)  // undefined
+    // console.log(textNode)
+
+    // let insertData = textNode.insertData(6, 'rahul ');
+    // console.log(insertData) // undefiened
+    // console.log(textNode)
+
+    // let replaceData = textNode.replaceData(6, 3,'rahul');
+    // console.log(replaceData) // undefined
+    // console.log(textNode)
+
+    // let splitText = textNode.splitText(6);
+    // console.log(splitText) // world
+    // console.log(textNode)
+    // console.log(elm.childNodes) // two children now
+    // console.log(elm.childNodes[0])
+    // console.log(elm.childNodes[1])
+
+    // let sub =  textNode.substringData(0,6)
+    // console.log(sub)
+    // console.log(textNode) // no change in original
+
+
+    </script>
+</body>
+</html>

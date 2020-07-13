@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FETCH API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        header {
+
+            text-align: center;
+            margin-top: .5rem;
+        }
+
+        .container {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: aqua;
+        }
+
+        #content {
+margin-top: 50px;
+            height: 300px;
+            width: 100%;
+            border: 2px solid black;
+        }
+
+        #btn {
+            margin-top: 1rem;
+            padding: 1rem;
+            font-size: larger;
+            font-weight :bold;
+            background-color: rgb(63, 63, 238);
+            color : white;
+            border : 2px solid rgb(3, 2, 68);
+            border-radius : 20px;
+            box-shadow: 4px 4px 3px red;
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>THIS IS THE TUTORIAL FOR FETCH API</h2>
+    </header>
+    <div class="container">
+        <div>
+            <button id="btn">
+                CLICK HERE TO FETCH
+            </button>
+        </div>
+        <div id="content">
+
+        </div>
+    </div>
+
+    <script>
+    // ======
+    
+    console.log("console is working fine");
+
+let btn = document.getElementById("btn")
+let content = document.getElementById("content");
+
+function getData() {
+    console.log("started get data")
+    url = "sample.txt";
+      fetch(url).then((response)=>{   // ye background me run hogi..isse pehle getData() ke baad waal chal jaega
+          console.log("inside first then")
+          return response.text();
+        }).then((data)=> {
+          console.log("inside second then")
+          console.log (data);
+         })
+
+}
+console.log("before running getData");
+getData();
+console.log("after running getData");
+
+// ==========================
+console.log("console is working fine");
+
+let btn = document.getElementById("btn")
+let content = document.getElementById("content");
+
+// GET REQUEST
+function getData() {
+    console.log("started get data")
+    url = "https://api.github.com/users";
+      fetch(url).then((response)=>{   // ye background me run hogi..isse pehle getData() ke baad waal chal jaega
+          console.log("inside first then")
+          return response.json();
+        }).then((data)=> {
+          console.log("inside second then")
+          console.log (data);
+         })
+
+}
+console.log("before running getData");
+getData();
+console.log("after running getData");
+
+// =========================================
+console.log("console is working fine");
+
+let btn = document.getElementById("btn")
+let content = document.getElementById("content");
+
+// GET REQUEST
+function getData() {
+    url = "http://dummy.restapiexample.com/api/v1/create";
+    data = '{"name":"prbhash123456","salary":"123","age":"23"}';
+    params = {
+        method: 'post',
+        headers: {
+            'content-Type': 'application/json'
+        },
+        body:data  // data already string
+    };
+    // // ye background me run hogi..isse pehle getData() ke baad waal chal jaega
+    fetch(url, params).then(response =>response.json())
+    .then(data => console.log(data)
+    )
+
+}
+getData();
+
+</script>
+</body>
+
+</html>

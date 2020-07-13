@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var course = {
+        //     courseName : 'Js',
+        //     duration : '6 months',
+        //     tutor: "prabhash"
+        // }
+
+        // use key name as variable
+        // var {courseName, duration, tutor} = course
+        // console.log(courseName)
+        // console.log(duration)
+        // console.log(tutor)
+
+        // if you want to give new name
+        // var{courseName:var1, duration:var2, tutor:var3} = course
+        // console.log(var1)
+        // console.log(var2)
+        // console.log(var3)
+
+        // if we dont want to have all the name
+        // var{courseName} = course
+        // console.log(courseName)
+
+
+
+        // ================================================
+        // var a,b;
+        // ({a,b} ={a:10, b:20})
+        // console.log(a)
+        // console.log(b)
+
+        // var {a, b} = {a:10, b:20}
+        // console.log(a)
+        // console.log(b)
+        
+        // var {a, b=40} = {a:10}
+        // console.log(a)
+        // console.log(b)
+        
+        // var {a, b=40} = {a:10, b:20}
+        // console.log(a)
+        // console.log(b)
+
+
+        // -------------------object passing to a functiom
+        var course = {
+            courseName : 'Js',
+            duration : '6 months',
+            tutor: "prabhash"
+        }
+        function show({courseName, tutor}){
+            console.log(courseName)
+            console.log(tutor)
+
+        }
+
+        show(course)
+    </script>
+</body>
+</html>

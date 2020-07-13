@@ -1,0 +1,5 @@
+[
+    { "name":"John", "age":30, "car":"audi" },
+    { "name":"Ram", "age":28, "car":"ford" },
+    { "name":"Amit", "age":22, "car":"maruti" }
+  ]

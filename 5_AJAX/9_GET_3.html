@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX-external API</title>
+    <style>
+        #users{
+            border: 2px solid black;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">LOAD GITHUB USERS</button>
+    <br><br>
+    <div id="users"></div>
+
+
+    <script>
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', loadusers);
+        function loadusers() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://api.github.com/users', true);
+
+            xhr.onlaod = function () {
+                console.log('all is okay')
+                if (this.status == 200) {
+                    var users = JSON.parse(this.responseText);
+                    var output = '';
+                    console.log('outside the loop')
+                    for (var i in users) {
+                        console.log('inside the loop')
+                        output +=
+                            '<div class = "users">' +
+                            '<img src="' + users[i].avatar_url + '"width="70" height="70">' + '<ul>' +
+                            '<li>ID:' + users[i].id + '</li>' +
+                            '<li>Login:' + users[i].Login + '</li>' +
+                            '</ul>' +
+                            '</div>';
+                    }
+                    console.log("all is fine")
+                    document.getElementById('users').innerHTML = output;
+                }
+
+
+
+            }
+            xhr.send();
+}
+
+
+
+
+    </script>
+</body>
+
+</html>

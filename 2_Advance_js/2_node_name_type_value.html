@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node-1</title>
+</head>
+<body>
+    <h1 id='myid'>
+        we are learning JS<!-- This is comment -->
+        </h1>
+    <p id="myid1">I am Paragraph</p>
+
+    <script>
+
+        //========= Document Node
+        // console.log(document.nodeName)   // #document
+        // console.log(document.nodeValue)  // null
+        // console.log(document.textContent)  // null
+        // console.log(document.nodeType)  // 9
+        // console.log(document.parentNode)  // null
+        // console.log(document.childNodes)  // 2
+        // console.log(document.firstChild)  // doctype
+        // console.log(document.lastChild)  // html
+        // console.log(document.previousSibling)  // null
+        // console.log(document.nextSibling)  // null
+
+        //=========== doctype node
+        // console.log(document.firstChild.nodeName)  // html
+        // console.log(document.firstChild.nodeType) // 10
+        // console.log(document.firstChild.nodeValue) // null
+        // console.log(document.firstChild.textContent) // null
+
+        //===========Element node
+        // console.log(document.lastChild.nodeName)  // HTML
+        // console.log(document.lastChild.nodeType) // 1
+        // console.log(document.lastChild.nodeValue) // null
+        // console.log(document.lastChild.textContent) // 
+
+
+        // var elm = document.getElementById('myid');
+        // console.log(elm.nodeName)      // H1
+        // console.log(elm.nodeValue)      // null
+        // console.log(elm.nodeType)       // 1
+        // console.log(elm.textContent)    // we are learning JS
+        // console.log(elm.childNodes)    // NodeList(3)
+        // console.log(elm.children)    // HTMLCollection []
+        // console.log(elm.parentNode)    
+        // console.log(elm.parentElement) 
+        // console.log(elm.firstChild)    // we are learning JS
+        // console.log(elm.lastChild)    // we are learning JS
+
+        // ========================Text Node
+        // var text = document.getElementById('myid').firstChild
+        // console.log(text.nodeName)  // #text
+        // console.log(text.nodeValue)
+        // console.log(text.nodeType)  //3
+        // text.nodeValue = 'this is added from js'
+
+
+        //==================== comment node
+        // var comment = document.getElementById('myid').firstChild.nextSibling
+        // console.log(comment.nodeName)  // #comment
+        // console.log(comment.nodeValue)  // 'This is comment'
+        // console.log(comment.nodeType)  // 8
+        // comment.nodeValue = 'this comment has been added through js'
+        // console.log(comment.nodeValue)  // 'this comment has been added through js'
+
+    </script>
+</body>
+</html>

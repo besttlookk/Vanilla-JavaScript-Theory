@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 title='myheading'> Heading 1 </h1>
+    <img src='#' alt='catimage' width="30%" height="20%">
+    <img src='#' alt='jsimage' width="30%" height="20%">
+
+    <div>
+        <ul id="myl">
+            <li class='game'>item 1</li>
+            <li class='supergame'>item 2</li>
+            <li class='game-super'>item 3</li>
+            <li class='gamesuper'>item 4</li>
+            <li class='super-game'>item 5</li>
+            <li class='game super'>item 6</li>
+            <li class='super game'>item 7</li>
+            <li class='super'>Item 8</li>
+        </ul>
+    </div>
+    <p title="mypara1" class="red black">This is paragraph 1</p>
+    <p title="mypara2" class="red">This is paragraph 2</p>
+    <p title="mypara3" class="black">This is paragraph 3</p>
+    <p title="mypara4" id="book">This is paragraph 4</p>
+    <p>This is paragraph 5</p>
+    <h3 class="red">Heading 3</h3>
+    <h3 id="book">Heading 3</h3>
+
+
+    <script>
+
+        // ==========================================Element Selector====================================================================
+        // let list = document.querySelectorAll('p')
+        // console.log(list)
+
+        // ==========================================group selector===================================================================
+        // let list = document.querySelectorAll('p, div') // it will give all the p and all the div
+        // console.log(list)
+        // console.log(list.length)
+
+        //========================================universal selector====================================================================
+        // let list = document.querySelectorAll('*')
+        // console.log(list)
+        // console.log(list.length)
+
+        // ====================================Class seletcor or style class================================================================
+        // let list = document.querySelectorAll('.game')
+        // let list = document.querySelectorAll('.game, .super') // it will give all class 'game' and 'super' indivally
+        // console.log(list)
+        // console.log(list.length)
+
+
+        // ==================================Element Specific style class[element ke saath class name]===================================
+        // let list = document.querySelectorAll('p.red') 
+        // let list = document.querySelectorAll('p.red, p.black') 
+        // let list = document.querySelectorAll('p.red.black')  // only one
+        // console.log(list)
+        // console.log(list.length)
+
+        // ================================ID selctor=====================================================
+        // let list = document.querySelectorAll('#book') 
+        // let list = document.querySelectorAll('p#book') // more specific
+        // console.log(list)
+        // console.log(list.length)
+
+
+        // =================================Attribute Selector==========================================
+        // let list = document.querySelectorAll('p[title]') // p element ke saath kiska attribute 'title ' hai
+        // let list = document.querySelectorAll('p[title = "mypara1"]') // p element ke saath kiska attribute 'title ' hai uar value 'mypara1'
+        // let list = document.querySelectorAll('img[width = "30%"][height = "20%"]')  // dono attributes sahi hona chahea
+        // console.log(list)
+        // console.log(list.length)
+
+
+        // let list = document.querySelectorAll('[class ~= "game"]')  // pura work 'game' hona chaea
+        // console.log(list)
+        // console.log(list.length)
+
+        let list = document.querySelectorAll('[class |= "game"]')  // starting class 'game' hona chahea[pura word game ho ya '-' ke saath wala]
+        console.log(list)
+        console.log(list.length)
+
+        // let list = document.querySelectorAll('[class ^= "game"]')  // game bas starting me hona chaeha .
+        // console.log(list)
+        // console.log(list.length)
+
+        // let list = document.querySelectorAll('[class $= "game"]')  // game bas ending me hona chaeha .
+        // console.log(list)
+        // console.log(list.length)
+
+        // let list = document.querySelectorAll('[class *= "su"]')  // 
+        // console.log(list)
+        // console.log(list.length)
+
+
+        // ==========================pseudo class======================================================
+        // let list = document.querySelectorAll('li:first-child')  // li me  first child
+        // let list = document.querySelectorAll('li:last-child')  // li me  first child
+        // let list = document.querySelectorAll(':first-child')  // har first class show karega
+        // let list = document.querySelectorAll('li:nth-child(2)')  // har first class show karega
+        // let list = document.querySelectorAll('li:nth-child(even)')  // har first class show karega
+        // let list = document.querySelectorAll('li:nth-last-child(2)')  // har first class show karega
+        // let list = document.querySelectorAll(':empty')  //jiska koi child nhi hota....empty tag
+        // console.log(list)
+    </script>
+</body>
+</html>

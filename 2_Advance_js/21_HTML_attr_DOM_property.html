@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id='myp' class="myclass" title="para"> Paragraph</p> 
+
+    <script>
+        // HTMLParagraphElement
+        let p =document.getElementById('myp')
+
+        console.log(Object.prototype.toString.call(p));  // HTMLParagraphElement
+
+        //HTML attribute
+        console.log(p.title)
+        console.log(p.className)
+        console.log(p.id)
+
+        p.title = 'new title'
+        p.className = 'new class'
+        p.id = 'new id'
+
+        console.log(p)
+
+    </script>
+</body>
+</html>

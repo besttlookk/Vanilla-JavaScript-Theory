@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- mousedown-mouseup-click[all 3 in sequence] -->
+    <!-- dblclick: Sequence: mousedown, mouseup, click, mousedown, mouseup, click -->
+    <!-- mouseenter[no bubble]-mouseleave[no bubble] -->
+    <!-- mouseover-mouseout -->
+    <!-- mousemove -->
+    <!-- contextmenu: it fires when mouse right bitton is clicked -->
+
+    <h1> Mouse Event </h1>
+    <div id="one" style="width: 300px; height: 300px; background-color: red;">
+    <div id="two" style="width: 100px; height: 100px; background-color: black;">
+    
+    </div>
+
+    </div>
+
+    <script>
+        function div1(e){
+            console.log(e.type);
+        
+        }
+        function div2(e){
+            console.log(e.type);
+        
+        }
+
+        let divOne = document.getElementById('one');
+        let divTwo = document.getElementById('two');
+
+
+        //  all 4 in sequence
+        // divTwo.addEventListener('mousedown', div1, false);
+        // divTwo.addEventListener('mouseup', div1, false);
+        // divTwo.addEventListener('click', div1, false);
+        // divTwo.addEventListener('dblclick', div1, false);  // 7 event fire hota ek dblclick se
+
+        // divTwo.addEventListener('mouseenter', div1, false);
+        // divTwo.addEventListener('mouseleave', div1, false);
+
+        // divTwo.addEventListener('mouseover', div1, false);
+        // divTwo.addEventListener('mouseout', div1, false);
+
+        // divTwo.addEventListener('mousemove', div1, false);
+        
+        // divTwo.addEventListener('contextmenu', div1, false);   // 3 event fire
+
+
+
+        // ===================================================check bubling============================
+
+        // --- click se bubling hota hai
+        // divTwo.addEventListener('click', div2, false);   // child per click kerne per parent ke event v active ho jata
+        // divOne.addEventListener('click', div1, false);
+
+
+        // divTwo.addEventListener('mousedown', div2, false);   // child per click kerne per parent ke event v active ho jata
+        // divOne.addEventListener('mousedown', div1, false);
+        // divTwo.addEventListener('mouseup', div2, false);   // child per click kerne per parent ke event v active ho jata
+        // divOne.addEventListener('mouseup', div1, false);
+
+        // ==========================no bubbling=================
+        // divTwo.addEventListener('mouseenter', div2, false);   
+        // divOne.addEventListener('mouseenter', div1, false);
+        // divTwo.addEventListener('mouseleave', div2, false);   
+        // divOne.addEventListener('mouseleave', div1, false);
+
+        //  mouseovwe and mouseout bubble kerta hai ...per mouseenter aur mouseleave nahi
+        // divTwo.addEventListener('mouseout', div2, false);   
+        // divOne.addEventListener('mouseout', div1, false);
+        // divTwo.addEventListener('mouseover', div2, false);   
+        // divOne.addEventListener('mouseover', div1, false);
+        
+
+        // =============focus event and blur bubble up nahi hota================
+
+
+    // ===========focusin and foucus out bubble up hota hai
+
+        // focusin: fires just as an element is about to gain focus
+        // focusout: fires just as an element is about to lose focus and just before the blur
+
+        
+
+
+      
+
+
+    </script>
+
+    
+</body>
+</html>

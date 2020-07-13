@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        current time is : <span id="time"></span>
+    </div>
+
+    <script>
+        // console.log("this is date & time tuitorial");
+        // by default it will give current date and time
+        // let now = new Date();
+        // console.log(now.toDateString())
+        // console.log(now.toTimeString())
+        // console.log(now.toString())
+        // console.log(now);
+
+        // once we define our date it will aad miliseconds from 1 jan 1970
+        // let dt = new Date(1000);
+        // console.log(dt);
+
+        // ==================User define date===============================
+
+        //====== FORMAT 1['YYYY-MM-DD']/['YYYY, MM, DD']===========
+        // let newDate =  new Date("2029-09-30");
+        // let newDate =  new Date("2029, 09, 30");
+        // console.log(newDate); 
+
+        // ======FORMATE 2 ======================
+        // let newDate =  new Date(year,month,date,hour,minute,seconds,milisecons);
+        // let newDate = new Date(3020, 4, 6, 9, 3, 2, 34);
+        // console.log(newDate);
+
+        // =====FORMAT 3[]=====
+        // let newDate = new Date('dec 26, 1996 15:45:55')
+        // let newDate = new Date('dec 26, 1996 ')
+        // console.log(newDate)
+
+
+
+        // =============Define date output========================
+
+        // newDate = new Date()
+        // let yr = newDate.getFullYear();
+        // console.log("year is ", yr);
+
+        // let dt = newDate.getDate();
+        // console.log("date is ", dt);
+
+        // let month = newDate.getMonth();
+        // console.log("month is ", month);
+
+        // let hours = newDate.getHours();
+        // console.log("hour is ", hours);
+
+        // let mili = newDate.getMilliseconds()
+        // console.log(mili)
+
+        // let time = newDate.getTime()
+        // console.log(time)  // in miliseconds
+        // sililarlily we have getMinutes()/ getSeconds()
+
+
+
+        //similarl we have : setmonth/setyear/setseconds..etc
+        // newDate.setDate(5)
+        // console.log(newDate)
+        // console.log(newDate.setFullYear(2020))
+        // console.log(newDate.setHours(10))  
+
+        //date.now
+
+
+        // setInterval(updateTime, 1000);
+
+        // function updateTime() {
+        //     time = new Date();
+        //     document.getElementById("time").innerHTML =`<em> ${time} </em>`;
+        // }
+        // //OR
+        // function updateTime(){
+        //      time.innerHTML = new Date();
+
+        //  }
+
+        // =========================HARRY
+        console.log("CONSOLE IS WORKING PROPERLY");
+
+// let date = new Date() ;
+// console.log(date);
+// console.log(new Date(2020,05,07,00));
+// console.log(new Date(20,05,07,00));
+// console.log(new Date("october 13,2020"));// date string
+
+// console.log(new Date().toDateString());
+// console.log(new Date("2020")) // ISO dates
+// var d = new Date("2015-03-25T12:00:00Z");
+// console.log(d)
+
+console.log(new Date().getFullYear());
+console.log(new Date().getMonth());
+console.log(new Date().getSeconds());
+console.log(new Date().getDate());
+console.log(new Date().getDay());
+console.log(new Date().getTime());
+console.log(new Date().getMilliseconds());
+
+    </script>
+</body>
+
+</html>

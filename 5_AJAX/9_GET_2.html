@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX-LOCAL_JSON</title>
+</head>
+
+<body>
+
+    <button id="btn1">GET USER</button>
+    <button id="btn2">GET USERS</button>
+    <br>
+    <br>
+    <h1>USER</h1>
+    <div id="user"></div>
+    <h1>USERS</h1>
+    <div id="users"></div>
+
+    <script>
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+
+        btn1.addEventListener('click', loadUser)
+        btn2.addEventListener('click', loadUsers)
+
+        function loadUser() {
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('GET', 'user.json', true);
+
+            xhr.onload = function () {
+                if (this.status == 200) {
+                    const user = JSON.parse(this.responseText)
+
+                    let output = ''
+                    output += "<ul>" +
+                        '<li>Name: ' + user.name + '</li>' +
+                        '<li>Age: ' + user.age + '</li>' +
+                        '<li>Car: ' + user.car + '</li>' +
+                        '</ul>'
+                    document.getElementById('user').innerHTML = output;
+                    console.log((user.name))
+                }
+                else if (this.status == 404) {
+                    document.getElementById('user').innerHTML = "NOT FOUND"
+                }
+            }
+            xhr.send()
+        }
+
+        function loadUsers() {
+
+            const xhr2 = new XMLHttpRequest();
+
+            xhr2.open('GET', 'users.json', true);
+
+            xhr2.onload = function () {
+                if (this.status == 200) {
+                    const users = JSON.parse(this.responseText)
+                    // console.log(users)
+
+                    let output2 = "";
+                    // since we have array here so we have to use loop
+                    for (var i in users) {
+                        output2 += "<ul>" +
+                            '<li>Name: ' + users[i].name + '</li>' +
+                            '<li>Age: ' + users[i].age + '</li>' +
+                            '<li>Car: ' + users[i].car + '</li>' +
+                            '</ul>';
+
+                    }
+                    document.getElementById('users').innerHTML = output2;
+
+                }
+
+
+
+            }
+            xhr2.send()
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

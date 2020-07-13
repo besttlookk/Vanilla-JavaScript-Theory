@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" id="myid">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Node</title>
+</head>
+<body>
+    <h1 id="myid2" class='myclass'>we are learning JS <!-- This is comment --> </h1>
+    <p id="myid3">I am Paragraph</p>
+
+
+    <script>
+        //  the parentNode read-only property returns the parent of specified node in the DOM tree.
+
+        // The parentElement property returns the parent element of the specified element. If the parent node is not an element node, it returns null.
+        var elm = document.getElementById('myid');
+        console.log(elm.parentNode);  //#document
+        console.log(elm.parentElement); // null [bcoz document is not element node]
+
+        var elm2 = document.getElementById('myid2');
+        console.log(elm2.parentNode);  // body
+        console.log(elm2.parentElement); // body  
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <div>
+        <table border="1" id="mytable">
+            <caption> My Table Caption </caption>
+            <thead>
+                <tr>
+                    <th>ID </th>
+                    <th>Name </th>
+                    <th>Course </th>
+                </tr>
+            </thead>
+            <tbody id='mytbody'>
+                <tr>
+                    <td>11</td>
+                    <td>Rahul</td>
+                    <td>JavaScript</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Prabhash</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Raushan</td>
+                    <td>PHP</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    
+    <script>
+    // The HTMLTableSectionElement interface provide special properties and methods for manipulating the layoout and presentation of sections, that is headers, footers and bodies, in an HTML table.
+    // --properties: rows :it returs a live HTMLCollection containing in the rows in the section.
+    // methods: insertRow()   / deleteRow()
+
+    let tbody = document.getElementById('mytbody')
+    // let rows = tbody.rows
+    // console.log(rows)   // rows of only tbody
+
+    // insert new row in tbody
+    let row = tbody.insertRow(-1)
+    row.insertCell().textContent = 'New'
+
+    tbody.deleteRow(-1)
+
+
+    </script>
+</body>
+</html>

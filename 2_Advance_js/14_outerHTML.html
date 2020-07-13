@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node tuitorial</title>
+</head>
+<body>
+    <div id="mydiv">
+        <ul id='myul'>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </div>
+
+
+
+
+
+
+    <script>
+ // The outerHTML is the HTML of an element including the element itself.
+ // use the outerHTML when you want to completely replace an element and its contents.
+ // Use innerHTML when you only want to replace the content of ythe element.
+
+     let div = document.getElementById('mydiv')
+     let u = document.getElementById('myul')
+    //  u.innerHTML = '';
+    //  u.outerHTML = '';
+     
+     u.innerHTML = '<li> this list is replacing all the list </li>'
+    //  u.outerHTML = '<p> This para is replacing whole ul </p>'
+     console.log(div)
+    </script>
+</body>
+</html>

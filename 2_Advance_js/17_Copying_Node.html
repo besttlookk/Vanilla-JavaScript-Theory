@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mydiv">
+        <ul id='myul'>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </div>
+
+
+    <script>
+        // The cloneNode(deep) method is used to copy the node. It creates a copy of node including all attributes and their values and return the clone.
+
+        //The method takes a single boolean argument whether the copy include all children of the node or just the element itself.
+
+        //The dublicate node returned by cloneNode(deep) is not part of document until it is added to another node that is part of the document using appendChild() or similar method. It also has no parent until it is appended to another node.
+
+        //  If the original node has an ID/name and the clone is to places in the same document, the ID/name of the close should be modified to be unique
+
+        //=========syntax=================
+        // cloneNode(false) will copy the elemet, attributes and their values
+        // clone(true) will copy entire element with child as well
+        // var duplicateNode = targetNode.cloneNode(false)
+
+
+
+        var u = document.getElementById('myul')
+        // var dublicateNode = u.cloneNode(false)
+        var dublicateNode = u.cloneNode(true)
+
+        parent = u.parentElement
+        parent.appendChild(dublicateNode)
+        console.log(parent)
+    </script>
+</body>
+</html>

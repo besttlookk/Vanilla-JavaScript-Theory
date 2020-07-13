@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            width: 400px;
+            height: 400px;
+            background-color: orange;
+        }
+        #two{
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+        }
+        #three{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+   
+    </style>
+</head>
+<body>
+                                     <!-- stopPropagation() -->
+<!-- Prevents further propagation of the current event in the capturing and bubbling phases. -->
+<!-- syntax: e.stopPropagation() -->
+
+
+                                    <!-- stopImmediatePropagation() -->
+<!-- prevents other listeners of the same event from being called -->
+<!-- syntax: e.stopImmediatePropagation() -->
+
+
+                                    <!-- preventDefault() -->
+<!-- the event interface's preventDefault() method tells the user agent that if event does not get explicitly handled,its default 
+action should not be taken as it normally would be -->
+
+
+<h1>Event capture and bubbling</h1>
+<div id="one">1
+    <div id="two">2
+        <div id="three">3
+          
+        </div>
+    </div>
+</div>
+
+<div id="mydiv" >
+    <a href="https://www.facebook.com" target="_blank" id="mylink">Facebook</a>
+</div>
+
+<script>
+
+    // function div1(e){
+    //     this.style.backgroundColor = 'red'
+    // }
+    // function div2(e){
+    //     this.style.backgroundColor = 'blue'
+    //     // e.stopPropagation()
+    //     e.stopImmediatePropagation()   // now it will not propagate to div2_2
+    // }
+    // function div2_2(e){
+    //     this.style.width = '350px'
+        
+
+    // }
+    // function div3(e){
+    //     this.style.backgroundColor = 'green'
+    //     e.stopPropagation()
+    // }
+    // let divone = document.getElementById('one');
+    // let divtwo = document.getElementById('two');
+    // let divthree = document.getElementById('three');
+
+    // divone.addEventListener('click', div1, false)
+    // divtwo.addEventListener('click', div2, false)
+    // divtwo.addEventListener('click', div2_2, false)
+    // divthree.addEventListener('click', div3, false)
+
+
+    //
+    function stopLink(e){
+        e.preventDefault()
+    }
+
+    document.getElementById('mylink').addEventListener('click', stopLink, false)
+</script>
+</body>
+</html>

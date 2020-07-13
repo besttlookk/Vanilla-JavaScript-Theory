@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class='title'>Attribute properties</title>
+</head>
+<body>
+    <h1 id='myid' class='myclass'>
+    we are learning JS 
+    <!-- This is comment --> 
+    </h1>
+    <p id="myid1">I am Paragraph</p>
+
+    <div id="myid2">
+
+    </div>
+
+    <script>
+    // the normalize() method removes empty text nodes, and joins 'adjacest text nodes' and make it as one so there will be no adjacent nodes.
+
+    let targetNode = document.getElementById('myid2');
+
+    targetNode.appendChild(document.createTextNode('Hello! '));
+    targetNode.appendChild(document.createTextNode('my name is '));
+    targetNode.appendChild(document.createTextNode('Prabhash.'));
+
+    console.log(targetNode)
+    console.log(targetNode.childNodes);
+
+    targetNode.normalize()
+    console.log(targetNode)
+    console.log(targetNode.childNodes);
+
+    
+
+    </script>
+</body>
+</html>

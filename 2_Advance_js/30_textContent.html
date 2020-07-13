@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id='myp'>This is a <span>Para</span><em>graph</em></p>
+
+    <script>
+
+        let p = document.getElementById('myp')
+        console.log(p)
+        console.log(p.textContent)   // sabhi childNode is text nikal ker ek saath show ker deta hai
+        console.log(p.innerHTML)  
+
+
+        p.textContent = 'Hello world'  // saare child ko delete ker ke ek single text node add ker deta
+        console.log(p)
+        console.log(p.textContent)  
+        console.log(p.innerHTML)  
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope and conditional</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+            <li>item-4</li>
+            <li>item-5</li>
+            <li>item-6</li>
+            <li>item-7</li>
+        </ul>
+    </div>
+    <script>
+        // scope of this way of assigning variable is universal
+        // var string1 = "this is a string1";
+        // var string1 = "this is a string2";
+        // console.log(string1);
+
+
+        //another way to assign value to varibale but scope of this varibale is only in this block.therefore it is better alternative to define variable
+        // let a = 'u';
+        // {
+        // let a = 'u6';
+        // console.log(a)
+
+
+        // }
+        // console.log(a)
+
+
+        //constant
+        // const a = "this can not be changed";
+        // console.log(a);
+
+        // a = 'trying to change constant';
+        // console.log(a);   not allowed
+
+
+        // conditional  (If-else ladder)
+        // let age = 2;
+        // if (age > 18) {
+        //     console.log('You can drink water');
+        // }
+
+        // //if we wanna check multiple condition(we can pt any number of "else if")
+        // else if (age == 2) {
+        //     console.log('do nothing');
+        // }
+
+        // else {
+        //     console.log('You can cold drinks');
+
+        // }
+
+
+
+        //    SWITCH CASE STATEMENT
+        // if we dont put "break" then when any case matches....remaining case will also come in output.
+        const cups = 43;
+        switch (cups) {
+            case 4:
+                console.log("the value of cup is 4")
+                break;
+            case 41:
+                console.log("the value of cup is 41")
+                break;
+            case 42:
+                console.log("the value of cup is 42")
+                break;
+            case 43:
+                console.log("the value of cup is 43")
+                break;
+
+            default:
+                console.log("the value of cup is none of 4, 41, 42, 43")
+                break;
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

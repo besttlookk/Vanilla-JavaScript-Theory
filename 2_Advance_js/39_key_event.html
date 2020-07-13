@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- keydown: it fores as a key is pressed down -->
+
+    <!-- keypress: it fires after a key is pressed down(after keydown). it only works with printable characters ...with this keydown and key up is also get fire-->
+
+    <!-- keyup: it fires as the key is released -->
+
+    <h1> Key Event </h1>
+    <input type="text" id="mytext">
+
+    <script>
+        let txt = document.getElementById('mytext')
+        function ke(e) {
+            console.log(`${e.type} ${e.keyCode} ${String.fromCharCode(e.keyCode)}`)
+        }
+
+        txt.addEventListener('keydown', ke, false)
+        txt.addEventListener('keypress', ke, false)   // keypress is giving accurate result
+        txt.addEventListener('keyup', ke, false)
+    </script>
+
+</body>
+</html>

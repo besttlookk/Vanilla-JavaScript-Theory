@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node tuitorial</title>
+</head>
+<body>
+    <div class="mydiv">
+        <h1 id="myh1">Heading 1</h1>
+        <h2 id="myh2">Heading 2</h2>
+        <h3 id="myh3">Heading 3</h3>
+    </div>
+
+<script>
+// the insertAdjacentElement() method inserts the specified element into a given specified position.
+// it return the element that was inserted or null, if the insertion failed.
+
+//syntax: targetElemet.insertAdjacentElement('position', 'element');
+// where positions are: 
+        // 'beforebegin': Before the element itself
+        //'afterbegin': Just inside the element before its first child
+        //'beforeend': Just inside the element, after its last child
+        // 'afterend': After the element itself
+
+    // element - The element to be inserted into the tree
+
+// the beforebegin and afterend positions work only if the node is in a tree and has an element parent.
+    
+    let targetElemet = document.getElementById('myh2');
+    let newElm = document.createElement('span')
+    newElm.textContent = 'This is span';
+    targetElemet.insertAdjacentElement('beforebegin', newElm);
+    // targetElemet.insertAdjacentElement('afterbegin', newElm);
+    // targetElemet.insertAdjacentElement('beforeend', newElm);
+    // targetElemet.insertAdjacentElement('afterend', newElm);
+
+    parent = targetElemet.parentElement
+    console.log(parent)
+    </script>
+</body>
+</html>

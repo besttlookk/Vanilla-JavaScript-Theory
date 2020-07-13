@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" name="form1">
+        Username <input type="text" name="username1"><br><br> <small id="small"></small>
+        <!-- Password <input type="password" name="password1"><br><br> -->
+        <input type="submit" value="Submit" name="submitbtn1">
+    </form>
+
+    <script>
+        function validatedata(){
+            var ptrn = /^([^0-9\W]*)$/
+
+            if(ptrn.test(document.form1.username1.value)) {
+                // document.form1.username1.style.backgroundColor = 'green'
+                document.getElementById('small').textContent =' username valid'
+                document.getElementById('small').style.color ='green'
+
+
+            } else {
+                // document.form1.username1.style.backgroundColor = 'red'
+                document.getElementById('small').textContent =' username not valid'
+                document.getElementById('small').style.color ='red'
+
+
+            }
+        }
+
+        document.form1.username1.addEventListener('keyup', validatedata);
+    </script>
+
+</body>
+</html>

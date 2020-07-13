@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Javascript provides access to the form within an HTML document through the Form object known as HTMLFormElement in the DOM.
+    Which is a child of the Document Object -->
+
+    <!-- Properties: accept-charset/ action / autocomplete /  enctype / encoding / elemenets[] / length /  method / name /  novalidate / target / checkValidity()/
+    reset()/ submit() -->
+
+    <!-- events: onset / onsubmit -->
+
+
+    <!-- --------form assessing -------- -->
+    <!-- Js provides various way of accessing form 
+      1. document.forms[index_number] - It returns collection of form in the documents.
+      2. document.forms['name_attribte_value']
+      3. document.name_attribute_value
+      4. getElemenetById('ID'): if form as an unique id we can use it
+    -->
+    <form action="#" name="form1">
+        Username <input type="text" name="username1"><br><br>
+        Password <input type="password" name="password1"><br><br>
+        <input type="submit" value="Submit" name="submitbtn1">
+    </form>
+<br><hr>
+    <form action="#" name="form2">
+        Username <input type="text" name="username2"><br><br>
+        Password <input type="password" name="password2"><br><br>
+        <input type="submit" value="Submit" name="submitbtn2">
+    </form>
+
+    <script>
+
+        // =============================Accessing form==============================================
+        // with index no.
+        // var form1 = document.forms[0];
+        // var form2 = document.forms[1];
+        // console.log(form1)
+        // console.log(form2)
+
+
+        //  with name_attr
+        // var form1 = document.forms['form1'];
+        // var form2 = document.forms['form2'];
+        // console.log(form1)
+        // console.log(form2)
+
+        // var form1 = document.form1;
+        // var form2 = document.form2;
+        // console.log(form1)
+        // console.log(form2)
+
+        // =========================accessing form fields==========================================
+        // other that using getElemetById
+        //there are some other ways:
+        // 1. elements[]: it contains collection of form fields . 
+        // syntax: document.form_name.elements[index_number]
+        // syntax: document.form_name.elements['name_attribute_value']
+        // syntax: document.form_name.name_attribute_value
+        // syntax: document.form_name.ID_attribute_value
+
+
+         var form1 = document.forms[0];
+        //  username = document.form1.username1
+        //  username = document.form1.elements[0]
+         username = document.form1.elements['username1']
+
+        console.log(username)
+        console.log(username.type)
+        console.log(username.name)
+        // console.log(username.id)
+        // console.log(username.class)
+        // console.log(username.placeholder)
+    </script>
+</body>
+</html>

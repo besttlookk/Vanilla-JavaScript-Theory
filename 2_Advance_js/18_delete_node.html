@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mydiv">
+        <ul id='myul'>
+            <li>Item 1</li>
+            <li id='item_2'>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </div>
+
+
+    <script>
+    // The method removeChild(child_name) is used to delete/remove nodes from the tree.
+    // the removed child node still exists in the memory, but is no longer part of the DOM;
+    // It returns the Node object that was removed on success and Null on failure.
+
+    //-----------Syntax:
+    // var delNode = parentNode.removeChild(target_node)
+    let parentNode = document.getElementById('myul');
+    let target_node = document.getElementById('item_2')
+
+    // let delNode = parentNode.removeChild(target_node)
+
+    // here we only need to access target_node
+    let delNode = target_node.parentElement.removeChild(target_node)
+    console.log(delNode)
+    console.log(parentNode)
+
+
+    </script>
+</body>
+</html>

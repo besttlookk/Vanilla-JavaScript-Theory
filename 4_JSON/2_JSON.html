@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // text in JSON format
+var text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+//we want to convert it in javaScript format
+let textJS = JSON.parse(text);
+// console.log(textJS);
+
+// to print each element in an array we will use Array.forEach()
+
+
+//.............   not working.................
+// textJS.forEach(display());
+
+// function display (index,value,textJS) {
+
+//  let data = ` "Employee "+" " +"employee.${index} :" +" " + "First Name : ${textJS.employees[index].firstName}" +" "+ "Last Name : ${textJS.employees[index].lastName}`
+//  console.log(data);
+
+// }
+
+// .......................................
+/*
+myObj = {name: "John", age: 31, city: "New York"};
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+// localStorage.setItem("testJSON2", myObj); // before storing data we have to convert it in JSON first.
+
+text = localStorage.getItem("testJSON");
+obj = JSON.parse(text);
+console.log(obj);  */
+
+// ---------------------Parsing Dates-------------------------------------
+
+// Date objects are not allowed in JSON.
+
+// If you need to include a date, write it as a string.
+
+// You can convert it back into a date object later:
+
+// var text = '{ "name":"John", "birth":"1986-12-14", "city":"New York"}';
+// var obj = JSON.parse(text);
+// // console.log(obj)
+// obj.birth = new Date(obj.birth);
+// console.log(obj)
+
+//                -----OR------
+
+// Or, you can use the second parameter, of the JSON.parse() function, called reviver.
+
+// The reviver parameter is a function that checks each property, before returning the value.
+// In JSON, date objects are not allowed. The JSON.stringify() function will convert any dates into strings.
+/*
+var text = '{ "name":"John", "birth":"1986-12-14", "city":"New York"}';
+var obj = JSON.parse(text, function (key, value) {
+  if (key == "birth") {
+    return new Date(value);
+  } else {
+    return value;
+  }
+});
+
+console.log(obj); */
+
+// ----------------
+// The JSON.stringify() function will remove any "functions" from a JavaScript object, both the key and the value:
+// This can be omitted if you convert your functions into strings before running the JSON.stringify() function.
+/*
+var obj = { name: "John", age: function () {return 30;}, city: "New York" };
+var myJSON = JSON.stringify(obj);
+console.log(myJSON);
+obj.age = obj.age.toString();
+var myJSON = JSON.stringify(obj);
+console.log(myJSON);
+
+*/
+
+//--------JSON Object Looping----Use FOR/IN LOOP---------------------------
+
+// myObj = { "name":"John", "age":30, "car":null };
+// for (const index in myObj) {
+//     console.log(`${index} ${myObj[index]}`);
+// }
+
+// const object = { "a": 1, "b": 2, "c": 3 };
+
+// for (const index in object) {
+//   console.log(`${index}: ${object[index]}`);
+ 
+// }
+//-----------Nested JSON Objects--------------------------
+
+// myObj = {
+//     "name":"John",
+//     "age":30,
+//     "cars": {
+//       "car1":"Ford",
+//       "car2":"BMW",
+//       "car3":"Fiat"
+//     }
+//    }
+
+//    const carName = myObj.cars.car1;
+//    console.log(carName);
+//    console.log(`My favraite car is ${myObj.cars.car1}`)
+
+
+//----------------JSON Arrays--------------------------------
+// //array inside an JSON object
+// let obj = {
+//     "name":"John",
+//     "age":30,
+//     "cars":[ "Ford", "BMW", "Fiat" ]
+//     }
+
+    //Looping Through an Array(for-in)
+    // for(const index in obj.cars) {   //obj.cars
+    //     console.log(`${index} : ${obj.cars[index]}`);
+    // }
+
+    //-----------------OR---(we can use for loop)-------------
+//    let i = 0;
+//    let arrl = obj.cars.length
+//    console.log(arrl);
+//    for (i = 0; i< arrl ;i++) {
+
+//     console.log(`${i} : ${obj.cars[i]}`);
+//    }
+
+
+// --------------Nested Arrays in JSON Objects-----------------------
+
+// myObj = {
+//     "name":"John",
+//     "age":30,
+//     "cars": [
+//       { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
+//       { "name":"BMW", "models":[ "320", "X3", "X5" ] },
+//       { "name":"Fiat", "models":[ "500", "Panda" ] }
+//     ]
+//    }
+
+//    console.log(myObj.cars.length);
+//    console.log(myObj.cars[0]);
+//    console.log(myObj.cars[1]);
+//    console.log(myObj.cars[2]);
+   
+//    console.log(myObj.cars[0].name);
+//    console.log(myObj.cars[1].name);
+//    console.log(myObj.cars[2].name);
+
+
+//    console.log(myObj.cars[0].models);
+//    console.log(myObj.cars[1].models);
+//    console.log(myObj.cars[2].models);
+   
+   
+//    console.log(myObj.cars[0].models[0]);
+//    console.log(myObj.cars[0].models[1]);
+//    console.log(myObj.cars[0].models[2]);
+  
+//    console.log(myObj.cars[1].models[0]);
+//    console.log(myObj.cars[1].models[1]);
+//    console.log(myObj.cars[1].models[2]);
+
+// for ( const index in myObj.cars) {
+//     console.log(`${myObj[index].name} ${myObj[index].models}`)  ;                 
+// }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class='title'>Attribute properties</title>
+</head>
+<body>
+    
+    <div>
+        <h2>JS Framework</h2>
+        <ul id='list'>
+            <li>Jquery</li>
+            <li>Angular JS</li>
+            <li>React JS</li>
+            <li id="ref">D3 JS</li>
+
+        </ul>
+
+    </div>
+
+    <script>
+    //The inserBefore() method is used to insert a node before the refernece node as a child of specified parent node.
+    // if the given child is a reference to an existing node in the documnet, insterBefore() moves if from its current position to the new position.
+    // if referenceNode is null, the newNode is inserted at the end of the list of child nodes.
+
+    // syntax: let insertedNode = parentNode.insertBefore(newNode, referenceNode)
+
+
+    // ====to create new node and insert==================
+    // parentNode = document.getElementById('list')
+    // console.log(parentNode);
+
+    // refNode = document.getElementById('ref')
+    // console.log(refNode)
+
+    // newNode = document.createElement('li')
+    // newNode.textContent = 'Backbone JS';
+    // console.log(newNode)
+
+    // parentNode.insertBefore(newNode, refNode);
+    // parentNode.insertBefore(newNode, null);  // will be added at last
+
+
+    // ==========to add existing node==================
+    // parentNode = document.getElementById('list')
+    // console.log(parentNode);
+
+    // refNode = document.getElementById('ref')
+    // console.log(refNode)
+
+    // existNode = refNode.previousElementSibling.previousElementSibling
+    // console.log(existNode)
+
+    // parentNode.insertBefore(existNode, refNode)
+    // console.log(parentNode)
+
+
+    
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <!-- DOm events pass an Event object as an argument to handlres.
+        This object contaons extra information about the event that occured. -->
+        <!-- Ex: addEventListener('click', function(e){}) -->
+        <h1>Event Object </h1>
+        <h1 id="heading" class= "yourhead this is"> Welcome to Code With Harry</h1>
+
+        <p id="myp">Click Me</p>
+    </div>
+<script>
+            // document.getElementById('myp').addEventListener('click', function(e) {
+            //     console.log(e);
+            //     console.log(e.clientX);
+            //     console.log(e.clientY);
+            //     console.log(e.type);
+            //     console.log(e.target);
+            //     console.log(e.currentTarget);
+            // })
+
+// =======================HARRY============================
+    // document.getElementById("heading").addEventListener("click",function(e){
+    // console.log("you have clicked the heading")
+    // location.href = "https://www.facebook.com"
+    // variable = e.target;  //give element
+    // variable = e.target.className;
+    // variable = e.target.classList;
+    // variable = Array.from(e.target.classList);
+    
+    
+    // variable = e.offsetX;
+    // variable = e.offsetY;
+    // variable = e.clientY;
+    // variable = e.clientX;
+
+// console.log(variable);
+//     })
+
+    document.querySelector('.container').addEventListener('mousemove', function(e){
+    console.log(e.offsetX, e.offsetY);
+    document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetX},120)`;
+    console.log('You triggered mouse move event')
+})
+
+          
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id='myp' class="myclass" title="para"> Hello World</p> 
+
+    <script>
+        // Its a read-only property
+
+        let p =document.getElementById('myp')
+        // console.log(p.attributes)  // it returns collection of attributes
+        // console.log(p.attributes[0])  // kay: value
+        // console.log(p.attributes[1])
+        // console.log(p.attributes[2])
+
+        // if index number is not known
+        console.log(p.attributes['title'])  // key:value
+        console.log(p.attributes['class'])  // key:value
+        console.log(p.attributes['id'])  // key:value
+
+        console.log(p.attributes['title'].name)  // key
+        console.log(p.attributes['title'].value)  // value
+        console.log(p.attributes['class'].name)  // key
+        console.log(p.attributes['class'].value)  // value
+        console.log(p.attributes['id'].name)  // key
+        console.log(p.attributes['id'].value)  // value
+
+    </script>
+</body>
+</html>

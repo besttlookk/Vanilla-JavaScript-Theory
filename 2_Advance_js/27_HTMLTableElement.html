@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <div>
+        <table border="1" id="mytable">
+            <caption> My Table Caption </caption>
+            <thead>
+                <tr>
+                    <th>ID </th>
+                    <th>Name </th>
+                    <th>Course </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11</td>
+                    <td>Rahul</td>
+                    <td>JavaScript</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Prabhash</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Raushan</td>
+                    <td>PHP</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    
+    <script>
+        // HTMLTableElement interface provides special properties and manipulating the layout and presntation of tables in an HTML document.
+        // ==========Properties===========================
+        // 1. caption: if no caption is associated: null
+        // 2. tHead : if no thead : null
+        // 3. tFoot
+        // 4. rows
+        // 5. tBodies :returns a live HTMLCollection of table bodies. Although the property is read-only, the returned object is live and allow the modification of its content.
+
+        // =========Method===========================
+        // 1. createCaption()
+        // 2. deleteCaption()
+        // 3. createTHead()
+        // 4. deleteTHead()
+        //5. createTFoot()
+        // 6. deleteTFoot()
+        // 7. insertRow()
+        // 8. deleetRow()
+
+
+// =============properties===========================
+        // let table = document.getElementById('mytable')
+        // console.log(table)
+        // console.log(table.caption)
+        // console.log(table.tHead)
+        // console.log(table.tFoot)
+        // console.log(table.rows)   // HTMLCollection
+        // console.log(table.tBodies)
+        // console.log(table.tBodies[0])
+        // console.log(table.tBodies[1])  // undefined as we have only  one body
+
+        // changning value
+        // table.caption.innerHTML = 'New Caption'
+
+
+// =================methods==========================
+    let table = document.getElementById('mytable')
+    
+
+// 1. createCaption : returns the caption for the table. if no caption element exists on the table, thois method creats it , then return it
+// 2. deleteCaption : removes  the caption for the table. if no caption element exists on the table, does nothing
+    // let tcap = table.createCaption(); 
+    // let tcap = table.createCaption(); // when no caption is there  ...creates empty caption
+    // tcap.innerHTML = 'New caption through jS'
+
+    // let tcap = table.deleteCaption(); 
+    // console.log(tcap)
+
+    // ---crate and delete thead----
+    let thead = table.createTHead();
+
+    // let thead = table.createTHead();  // if no thead earlier
+    // thead.innerHTML = `<tr>
+    //                     <th>head 1</th>
+    //                     <th>head 2</th>
+    //                     <th>head 3</th>
+    //                     </tr>`
+
+    table.deleteTHead();
+    console.log(thead)
+
+    // similar is tfoot
+
+// ---inser and delete row
+    //  insertRow() method inserts a new row in table and returns a refernece to a new row.
+    // --sysntax: let row = HTMLTableElement.inserRow(index = -1)
+    //  index is the row index of the new row
+    // row is assigned a refernece to a new row. A reference to HTMLTableRowElemet.
+    // if index = -1 or equal to the number of rows, the new row is appended as the last row.
+    // If index is greater than the number of rows, an IndexSizeError exception will result. 
+    // If index is omitted its default to -1
+    // if a table has muliple tbody elements, by default, the new row is inserted into the last tbody
+
+    // let row = table.insertRow(-1)
+    // row.insertCell(0).textContent = 'new data'
+    // console.log(row)
+    
+    let row = table.insertRow(1)
+    row.insertCell(0).textContent = 'new data'
+    console.log(row)
+    
+    table.deleteRow(1)
+
+
+    </script>
+</body>
+</html>

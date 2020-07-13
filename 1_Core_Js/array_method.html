@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log("console is working");
+let arr1 = [3,4,1,90,45,123];
+let arr2 = ["ram",'amit','rohan',89,"-10"]
+
+console.log(arr1.length)
+console.log(arr2.length)
+
+
+/*
+for(i=0;i<arr1.length;i++)
+{
+console.log(arr1[i]);
+}
+
+for(i=0;i<arr2.length;i++)
+{
+console.log(arr2[i]);
+}
+
+*/
+
+/*
+console.log(arr1.concat(arr2),typeof arr1.concat(arr2))
+console.log(arr1)
+console.log(arr1 + arr2, typeof (arr1 + arr2))
+console.log(arr1)
+*/
+
+
+/*
+//----------------------------------------
+       toString() vs Join
+
+
+console.log(arr1.toString(), typeof arr1.toString())
+console.log(arr1.toString()[0]);
+console.log(arr1.toString()[1]);
+console.log(arr1.toString()[2]);
+console.log(arr1.toString()[3]);
+console.log(arr1.toString()[4]);
+console.log(arr1.toString()[5]);
+console.log(arr1.toString()[6]);
+console.log(arr1.toString()[7]);
+console.log(arr1.toString()[8]);
+console.log(arr1.toString().length);
+
+// if we want anything  other than (;) we use join()
+console.log(arr1.join("+"));
+*/
+
+// --------------------
+    //  HOW TO DIFFRENCIATE ARRAY FROM OBJECT     
+
+// console.log(Array.isArray(arr1));
+// console.log(arr1 instanceof Array) ;
+
+
+//---------------------------------
+    // Push() & POP()
+  
+
+  // let arrPush =arr1.push(15,17)  
+  // console.log(typeof arrPush)
+  // console.log(arr1)  // ORIGINAL ARRAY GET AFFECTED
+// // console.log(arrPush) // it  returns new length
+
+// // we cant do this because arrPush is new length number.
+// // for(i=0;i<arrPush;i++)
+// // {
+// // console.log(arrPush[i]);
+// // }    
+
+// console.log(arr1.pop());
+// console.log(arr2.pop());// returns pop out number
+// console.log(arr1.pop(2));
+// console.log(arr1.pop());
+// console.log(arr1.pop());
+// ORIGINAL ARRAY GETS AFFECTED
+// console.log(arr1)
+
+//-----------------------------------
+//   SHIFT & UNSHIFT
+
+// console.log(arr1.shift())
+// console.log(arr1)
+
+// console.log(arr1.unshift(40,69))
+// console.log(arr1)
+
+// they return new array. so it is better to use
+// they also affect array
+
+//-------------------------------------
+    //   SPLICE() vs delete()
+     
+// normally we use splice to add items at the desired place but it can also be used to remove items
+
+// console.log(arr1.splice(2,2,"apple","banana"))
+// console.log(arr1)
+// to delete one element without adding
+// console.log(arr1.splice(1,1),arr1)
+
+// delete arr1[3];
+// console.log(arr1)// it leave empty space. SPLICE is better option.
+
+//--------------------------------------------
+        // SLICE(): The slice() method slices out a piece of an array into a new array.leave the previous array as it is
+
+        // it can take 2 argument
+//   console.log(arr1.slice(4));    
+//   console.log(arr1.slice(2,4));    
+//-------------------------------------------------
+
+//   Automatic toString()
+
+// --------------------------------------------------
+//         SORTING an array = sort()
+// The sort() method sorts an array alphabetically: IT CHANGES THE ORIGINAL ARRAY
+
+// console.log(arr2.sort(),arr2);
+// console.log(arr2.sort()[0]);
+// console.log(arr2.sort()[1]);
+// console.log(arr2.sort()[3]);
+// console.log(arr2.sort()[4]);
+
+
+// console.log(arr1.sort(),arr1);// no use but we can fix by THE COMPARE FUNCTION
+// he purpose of the compare function is to define an alternative sort order.
+
+// let points = [40, 100, 1, 5, 25, 10];
+// console.log(points.sort())
+// to sort in DESCENDING ORDER
+// console.log(points.sort(function(a, b){return b - a}))
+// //to sort in ASCENDING ORDER
+// console.log(points.sort(function(a, b){return a - b})) 
+
+// Sorting an Array in Random Order
+// Example
+
+// console.log(points.sort(function(a, b){return 0.5 - Math.random()}));
+
+
+//-------------------------------------
+        //  REVERSING AN Array= reverse()
+        // changes original array
+//  console.log(arr2.reverse(),arr2)       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------
+/*
+
+// finding max and min values in a array
+
+//  [There are no built-in functions for finding the highest or lowest value in a JavaScript array. ]
+
+// sorting method can be used to find min and max value but it is inefficient if we only wish to find max and min vale. 
+
+//  USING MATHS.max.apply()
+let points = [40, 100, 1, 5, 25, 10];
+
+function myArrayMax(arr) {
+    return Math.max.apply(null, arr);
+  }
+
+console.log(myArrayMax(points));
+
+function myArrayMin(arr) {
+    return Math.min.apply(null, arr);
+  }
+
+  console.log(myArrayMin(points));
+
+
+//   HOME MADE SOLUTION
+
+function myArrayMax(arr) {
+    var len = arr.length;
+    var max = -Infinity;
+    while (len--) {
+      if (arr[len] > max) {
+        max = arr[len];
+      }
+    }
+    return max;
+  }
+
+
+  function myArrayMin(arr) {
+    var len = arr.length;
+    var min = Infinity;
+    while (len--) {
+      if (arr[len] < min) {
+        min = arr[len];
+      }
+    }
+    return min;
+  }
+  */
+//  -------------------------------------------
+
+        // Sorting Object Arrays
+// JavaScript arrays often contain objects:
+var cars = [
+    {type:"Volvo", year:2016},
+    {type:"Saab", year:2001},
+    {type:"BMW", year:2010}
+  ];
+
+//   Even if objects have properties of different data types, the sort() method can be used to sort the array.
+
+// The solution is to write a compare function to compare the property values:
+// cars.sort(function(a, b){return a.year - b.year});
+
+// Comparing string properties is a little more complex
+
+// cars.sort(function(a, b){
+//     var x = a.type.toLowerCase();
+//     var y = b.type.toLowerCase();
+//     if (x < y) {return -1;}
+//     if (x > y) {return 1;}
+//     return 0;
+//   });
+
+
+//-------------------------------------------------
+
+    </script>
+</body>
+</html>

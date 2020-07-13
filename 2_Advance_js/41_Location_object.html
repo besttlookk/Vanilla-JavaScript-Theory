@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Location Object </h1>
+    <!-- This is used to access the current location(URL) of the window.
+    The location object can be both read and replaced, so it is possible to pdate the location of a page throought scripting.
+Location object is a property of the Window -->
+
+<script>
+
+    //==================================LOCATION PROPERTIES================================================================
+    // hash: The part of the URL including and following the #symbol.
+    // host: The hostname and the port number
+    // hostname : hostname
+    // href- entire URL
+    // pathname : Path relative to the host
+    // port: Port Number
+    // protocol: Protocol
+    // search: the part of the URL including and after the ?
+
+    // console.dir(location)
+    // console.dir('hash: ' + location.hash)
+
+    // console.dir('host: ' + location.host)
+    // console.dir('host: ' + window.location.host)  // both are same
+
+    // console.dir('hostname: ' + location.hostname)
+    // console.dir('href: ' + location.href)
+    // console.dir('pathname: ' + location.pathname)
+    // console.dir('port: ' + location.port)
+    // console.dir('protocol: ' + location.protocol)
+    // console.dir('search: ' + location.search)
+
+
+
+    // =============================Location Method==========================================================================
+    // 1. assign(URL): it chnages the location of current page with the passed-in URL.
+    // 2. reload(): reload the current page.
+    // 3. replace(URL): Replaces the current page with the given URL in history. As it is replaced in history, it won't be possible to accewss the current page with back/ forward
+
+    // window.location.reload()
+
+    // window.location.assign('https://www.google.com')
+
+    // window.location.replace('https://www.google.com')
+</script>
+</body>
+</html>

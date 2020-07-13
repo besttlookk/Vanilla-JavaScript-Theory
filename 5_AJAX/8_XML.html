@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mydiv">
+        
+        <p id="fname"></p>
+        <p id="lname"></p>
+    </div>
+    <input type="submit" value="submit" id="btn">
+    <script>
+        // document.getElementById('btn').addEventListener("click", makerequest);
+        // let name = document.getElementById('name')
+        // let age = document.getElementById('age')
+        // function makerequest(){
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('GET','data.xml', true);
+        //     xhr.responseType = 'document';
+        //     xhr.onload = ()=> {
+                
+        //         if(xhr.status == 200){
+        //           console.log(xhr.response);  
+        //           console.log(xhr.response.getElementsByTagName('employee'));  
+        //           console.log(xhr.response.getElementsByTagName('employee')[0]);  
+        //           console.log(xhr.response.getElementsByTagName('employee')[0].getElementsByTagName('firstName')[0]);  
+        //           console.log(xhr.response.getElementsByTagName('employee')[0].getElementsByTagName('firstName')[0].childNodes[0]);  
+        //           console.log(xhr.response.getElementsByTagName('employee')[0].getElementsByTagName('firstName')[0].childNodes[0].nodeValue);  
+        //          fname.innerText = xhr.response.getElementsByTagName('employee')[0].getElementsByTagName('firstName')[0].childNodes[0].nodeValue;
+        //          lname.innerText = xhr.response.getElementsByTagName('employee')[0].getElementsByTagName('lastName')[0].childNodes[0].nodeValue;
+        //         }
+        //         else{
+        //                 console.log('status is not 200')
+        //         }
+        //     };
+
+  
+        //     xhr.send();
+   
+        //     }
+
+        // ===========================using loop===========================
+
+        document.getElementById('btn').addEventListener("click", makerequest);
+        let div = document.getElementById('mydiv')
+        function makerequest(){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET','data.xml', true);
+            xhr.responseType = 'document';
+            xhr.onload = ()=> {
+                
+                if(xhr.status == 200){
+                    x = xhr.response.getElementsByTagName('employee');
+                    for(i=0; i< x.length; i++){
+                        // console.log(x[i])
+                        div.innerHTML += `<p> ${x[i].getElementsByTagName('firstName')[0].childNodes[0].nodeValue} </p><p> ${x[i].getElementsByTagName('lastName')[0].childNodes[0].nodeValue} </p><br>`
+                    }
+  
+                }
+                else{
+                        console.log('status is not 200')
+                }
+            };
+
+  
+            xhr.send();
+   
+            }
+
+
+  
+
+
+
+      
+     
+    </script>
+</body>
+</html>

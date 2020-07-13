@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- an exception is a generalization of the concept of an error to include any unexpected condition encountered during execution -->
+    <!-- try -->
+    <!-- catch -->
+    <!-- finally -->
+    <!-- throw -->
+
+
+     <h3 >INPUT FORM</h3>
+    <p>enter a number between 50 and 100</p>
+    <input id="input"   type="text">
+    <button id="btn" onclick="check()">check</button> <br>
+    <p id="result"></p>
+
+    <script>
+        // error show nahi karega ese
+        // try{
+        //     add();  // this function does not exist
+        //     document.write('skipped Code')  // this code is skippted if above code raise error
+        // }
+        // catch(e){
+        //     // either use pre-define error message
+        //     // document.write('message: ' + e.message + '<br>')
+        //     // document.write('name: ' + e.name + '<br>')
+        //     // document.write('stack: ' + e.stack + '<br>')
+
+        //     // or write your own code
+        //     document.write('Function define nahi hai')
+        // }
+        // finally{
+        //     // esa code jo hona must hai...chahe error ho ya na ho
+        //     console.log('kaam ho gaya')
+        // }
+
+
+        // ------throw--
+
+        // function getRectArea(w, h) {
+        //     if (isNaN(w) || isNaN(h)) {
+        //         throw 'Parameter is not a number'
+        //     }
+        // }
+
+        // try{
+        //     getRectArea(10, 'A');
+        // }catch(e){
+        //     document.write(e)
+        // }
+        // document.write('<br> I have no idea')
+
+        // =====================================HARRY+++++++++++++++++++++
+        console.log("console is working");
+
+/*
+The try statement lets you test a block of code for errors.
+
+The catch statement lets you handle the error.
+
+The throw statement lets you create custom errors.
+
+The finally statement lets you execute code, after try and catch, regardless of the result.
+
+*/
+
+ function check()
+{
+    let x;
+    let message;
+    x = document.getElementById("input").value;
+    message = document.getElementById("result");
+    message.innerHTML = '';
+    try {
+        if(x == "")  throw "is empty";
+    if(isNaN(x)) throw "is not a number";
+    x = Number(x);
+        if (x < 50) {
+            throw "lower than 50";
+
+        }
+        if (x > 100) {
+            throw "higher than 100";
+        }
+    }
+    catch (err) {
+        message.innerHTML = "Input is " + err;
+    }
+
+    finally {
+        document.getElementById("input").value = "";
+      }
+}
+
+
+
+    </script>
+</body>
+</html>

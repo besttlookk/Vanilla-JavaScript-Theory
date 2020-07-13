@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .class1 {
+            background-color: grey;
+        }
+
+        .class2 {
+            background-color: red;
+        }
+        </style>
+</head>
+<body>
+    <p id="myp" class="class1"  style="color: yellow;">This is a paragraph </p>
+
+    <script>
+        let p = document.getElementById('myp')
+        // just bt changing the class name we changed lots of style at a time.. it is far better than the previous method of inline styling
+        p.className = 'class2'
+        console.log(p)
+    </script>
+</body>
+</html>

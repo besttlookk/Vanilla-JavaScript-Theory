@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="data"></p>
+    </div>
+    <input type="submit" value="submit" id="btn">
+    <script>
+        document.getElementById('btn').addEventListener("click", makerequest);
+        let dt = document.getElementById('data')
+        function makerequest(){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET','data.txt', true);
+          
+            xhr.onload = ()=> {
+                
+                if(xhr.status == 200){
+                  dt.innerHTML = xhr.responseText;
+                }
+                else{
+                        console.log('status is not 200')
+                }
+            };
+
+  
+            xhr.send();
+   
+            }
+
+
+      
+     
+    </script>
+</body>
+</html>

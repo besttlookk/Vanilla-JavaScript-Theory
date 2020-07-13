@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="data"></p>
+    </div>
+    <input type="submit" value="submit" id="btn">
+    <script>
+        document.getElementById('btn').addEventListener("click", makerequest);
+
+        // function makerequest(){
+        //     var xhr = new XMLHttpRequest();
+        //     //checking readystate
+        //     console.log('Before Open', xhr.readyState)  // 0
+        //     xhr.open('GET','data.txt', true);
+        //     console.log('After open', xhr.readyState)  // 1
+
+        //     xhr.onreadystatechange = ()=> {
+        //         console.log('readyState', xhr.readyState); // kaun kaun se stage se gujara [2/3/4]
+        //         if(xhr.readyState === XMLHttpRequest.DONE){
+                    
+        //             if(xhr.status == 200){
+        //                 console.log(xhr.responseText)
+        //             }
+        //             else{
+        //                 console.log('status is not 200')
+        //             }
+        //         }
+              
+        //     }
+
+        //     xhr.send();
+   
+        //     }
+
+
+        // ========================
+        function makerequest(){
+            var xhr = new XMLHttpRequest();
+
+            if(xhr.readyState == 0){
+                // open method ko call kerne se pehle ager kuch kerna hai to yaha pe kar sakte
+                console.log('open method not called yet')
+            }
+            xhr.open('GET','data.txt', true);
+
+            if(xhr.readyState == 1){
+                console.log('open method not called ')
+            }
+
+            xhr.onreadystatechange = ()=> {
+                
+            if(xhr.readyState == 2){
+                console.log('Response header 2 ')
+            }
+
+            
+            if(xhr.readyState == 3){
+                console.log('Loading....3 ')
+            }
+
+                
+            if(xhr.readyState === 4){
+                    
+                    if(xhr.status == 200){
+                        console.log(xhr.responseText)
+                    }
+                    else{
+                        console.log('status is not 200')
+                    }
+                }
+              
+            }
+
+            xhr.send();
+   
+            }
+     
+    </script>
+</body>
+</html>

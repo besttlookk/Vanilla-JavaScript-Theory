@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="data"></p>
+    </div>
+    <input type="submit" value="submit" id="btn">
+    <script>
+        document.getElementById('btn').addEventListener("click", makerequest);
+
+        function makerequest(){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET','data.txt', true);
+            xhr.timeout = 2; //milisec
+
+            xhr.onload = ()=> {
+                
+                if(xhr.status == 200){
+                        console.log(xhr.responseText)
+                }
+                else{
+                        console.log('status is not 200')
+                }
+            };
+
+            xhr.onprogress = (e) => {
+                console.log(e.loaded);  // 22 char data.txt se load h gaya
+                console.log(e.total);  // total v 22 char hi hai
+            }
+
+            xhr.onerror = () => {
+                    console.log('Network not available')
+            }
+            xhr.onloadstart = () => {
+                    console.log('Transaction has started')
+            }
+            xhr.onloadend = () => {
+                    console.log('Transaction End')
+            }
+            xhr.onabort = () => {
+                    console.log('Abort')
+            }
+                
+            xhr.ontimeout = () => {
+                    console.log('timeout')
+            }
+                
+                
+              
+
+            xhr.send();
+   
+            }
+
+
+      
+     
+    </script>
+</body>
+</html>

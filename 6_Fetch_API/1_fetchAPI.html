@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Sandbox</title>
+</head>
+
+<body>
+    <button id="getText">GET TEXT</button>;
+    <button id="getUsers">GET USERS</button>;
+    <button id="getPosts">GET API DATA</button>;
+    <hr>
+    <div id="output"></div>
+    <form id="addPost">
+        <div>
+            <input type="text" id="title" placeholder="title">
+        </div>
+        <div>
+            <textarea id="body" placeholder="body"></textarea>
+        </div>
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <script>
+        const btn1 = document.getElementById('getText');
+        const btn2 = document.getElementById('getUsers');
+        const btn3 = document.getElementById('getPosts');
+        document.getElementById('addPost').addEventListener('submit', addPost)
+
+        btn1.addEventListener('click', getText)
+        btn2.addEventListener('click', getUsers)
+        btn3.addEventListener('click', getPosts)
+        
+
+        //  function getText() {
+        //        fetch('sample.txt')
+        //        .then(function(res){
+        //         //    console.log(res)
+        //         //    console.log(res.text());
+        //         // if the file was json
+        //             //  console.log(res.json());
+        //             // BUT WE ARE NOT GETTING ONLY ACTUAL DATA
+        //             // for that we need to return the response
+        //             return res.text()
+        //        })
+        //        .then(function(data){
+        //            console.log(data)
+        //        })
+        //     }
+
+        // --------------------same thing with arrow function-------
+
+        function getText() {
+            fetch('sample.txt')
+                .then((res) => res.text())
+                .then((data) => {
+                    console.log(data)
+
+                    document.getElementById('output').innerHTML = data;
+                })
+                .catch((err) => console.log(err))
+
+        }
+
+        //-------------------json file--------------
+
+        function getUsers() {
+            fetch('users.json')
+                .then((res) => res.json())
+                .then((data) => {
+                    // console.log(data);
+                    let output = "<h2>users</h2>"
+                    data.forEach(function (user) {
+
+                        output += `
+            <ul>
+               <li>Name: ${user.name} </li>
+               <li>Age: ${user.age} </li>
+               <li>Cars: ${user.cars} </li>
+               </ul>`
+
+
+                    });
+                    document.getElementById('output').innerHTML = output
+
+                })
+
+
+        }
+        // ----------------------------API-----------
+
+        function getPosts() {
+            fetch('https://jsonplaceholder.typicode.com/posts')
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                    let output = "<h2>Posts</h2>"
+                    data.forEach(function (post) {
+
+                        // output += `
+                        // <ul>
+                        //    <li>User ID: ${user.userId} </li>
+                        //    <li>Id: ${user.id} </li>
+                        //    <li>Title: ${user.title} </li>
+                        //    </ul>`
+
+                        output += `
+                            <div>
+                                <h3> ${post.title}</h3>
+                           <p> ${post.body}</p>
+                                 </div>`
+
+                    });
+                    document.getElementById('output').innerHTML = output
+
+
+                })
+
+
+        }
+       function addPost(e) {
+           e.preventDefalt();
+             let title =document.getElementById("title").value
+             let body =document.getElementById("body").value
+
+             fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain , */* ',
+                    'Content-type' : 'application/json'
+                },
+                body:JSON.stringify({title:title, body:body})
+
+             })
+
+              .then((res)=> res.json())
+              .then((data)=> console.log(data));
+
+       }
+
+
+    </script>
+</body>
+
+</html>

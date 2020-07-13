@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node tuitorial</title>
+</head>
+<body>
+    <div id="mydiv">
+        <h1 id="myh1">Heading 1</h1>
+        <h2 id="myh2">Heading 2</h2>
+        <h3 id="myh3">Heading 3</h3>
+    </div>
+
+
+
+
+
+
+    <script>
+    //The element property 'innerHTML' gets or sets the HTML or XML markup contained withiin the element.
+
+    // setting the value of innerHTML lets you easily replace the existing contents of an elemet with new content.
+
+    //HTML5 specified that a <script> tag inserted with innerHTMK should not execute.
+
+     // it is reccommneded we should not use innerHTML when inserting plain text; instead. use textContent
+
+     let parent = document.getElementById('mydiv')
+     console.log(parent.innerHTML)
+    </script>
+</body>
+</html>

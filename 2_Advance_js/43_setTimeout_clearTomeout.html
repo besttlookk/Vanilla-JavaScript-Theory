@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- The setTimeout() method sets a timer which executes a function or specified piece of code after the timer expiers -->
+    <!-- The function is only executed once. -->
+    <!-- It returns a positive integer value which identifies the time created by the call to setTimeout(); this value can be passed to clearTimeout() to cancle the timeout() -->
+
+    <!-- --suntax -->
+    <!-- setTimeout(function,miliseconds,para1, para2) -->
+
+
+    <!-- clearTimeout() -->
+    <!-- The clearTimeout method cancles a timeout previously establishes by calling setTimeout(). The ID value returned by setTimeout() is used as the paraeter for the clearTimeout() method -->
+
+    <p id="myp">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis dicta quos nulla error nesciunt possimus ullam accusamus natus! Eligendi, asperiores.</p>
+
+    <button id="mybtn" type="button">Clear Time</button>
+    <script>
+        // function changeCss(){
+        //     document.getElementById('myp').style = 'color:red'
+        // }
+
+        // setTimeout(changeCss, 5000);
+
+
+        // var timeoutID = setTimeout(()=>{
+        //     document.getElementById('myp').style = 'color:red'
+        // },5000);
+
+        // function clrTime(e){
+        // clearTimeout(timeoutID);
+        // }
+
+        // document.getElementById('mybtn').addEventListener('click', clrTime)
+
+      
+
+
+        // ======================================with parameter------
+        // function greet(name)
+        //           { 
+        //               console.log('HELLO GOOD MORNING ' + name);
+        //           }
+        // setTimeout(greet,5000, "Prabhash");
+
+        // function greet(name, byetext)
+        //           { 
+        //               console.log('HELLO GOOD MORNING ' + name + "" + byetext);
+        //           }
+        // inside settimeout we only have to mention  function name. we cant call function
+        // setTimeout(greet,5000, "Prabhash", "take care");
+
+    </script>
+</body>
+</html>

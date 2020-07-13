@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myclass1{
+            font-style: italic;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <p id='myp' class='myclass1'style="background-color: grey; color: black !important;">Paragraph</p>
+
+    <script>
+        // ===============CSSStyleDeclatation Object=================
+        //The CSSStyleDeclaration object represnets a collection of css propert-value pairs.
+        //  It is used in API: 1. HTMLElement.style  2. window.getComputedStyle()
+        // both gives CSSStyle object. but in case of window.getComputedStyle it is read-only.
+
+        //================inline style manupulation: style property=================
+        //====properties:========
+        // 1. cssText  2. length 3. parentRule
+
+        //===methods============
+
+        // 1. getPropertyValue(property)
+        // 2. getPropertyPriority(property)
+        // 3. removeProperty(property)
+        // 4. setPriority(property, value, priority)
+        // 4. item(index)
+
+
+        // let p = document.getElementById('myp')
+
+        // to acceess inline css
+        // console.log(p.style)   //CSSStyleDeclation object[for read and write both]
+        // let cs = p.style  //CSSStyleDeclation object
+    
+
+
+        // let bg = p.style.backgroundColor; 
+        // console.log(bg)
+
+        // p.style.backgroundColor = 'yellow';
+
+        // p.style.fontSize = '90px';
+
+        // p.setAttribute('style', 'font-size: 90px')  // setting attribute like this will overwrite other property
+        // console.log(p)
+
+
+        // =====property====
+        // console.log(cs.cssText)  // all css as text
+        // console.log(cs.length)  // 2 [2 css]
+
+        // cs.cssText = 'font-size: 90px; color: blue;'   // it will override others
+        // console.log(p)
+
+
+        // =======method=========
+
+        // to get property name
+        // console.log(cs.item(1))
+        // console.log(cs.item(0))
+        // console.log(cs[0])  // shorter method
+        // console.log(cs[1])
+
+
+        // to get property value
+        // console.log(cs.getPropertyValue('color'))
+
+        // removing property
+        // console.log(cs.removeProperty('color'));
+
+        // set property
+        // cs.setProperty('font-size', '90px', 'important')
+        // console.log(p)  // it didnot overwrite others style
+
+        // console.log(cs.getPropertyPriority('color'));
+
+        // ==================================Computed style=======================================
+        // The computed style is the style actually used in dispalying the element, after 'stylings' from multiple sources have been applied.
+        // style source can include: internal style sheet, external styke sheets, inherieted styles , inline style, and browser default styles
+
+        // to get the values of all the css properties for an element you should yse : window.getComputedStyle() instead of style property 
+
+        // ---syntax
+        // window.getComputedStyle(element, psedoElement)
+
+        // element - element for which to get the computed style.
+        let p = document.getElementById('myp')
+
+        let allCss = window.getComputedStyle(p);
+        console.log(allCss)    // CSSStyleDeclaration Object
+        // console.log(allCss.fontStyle)    // we are using DOM-property
+        // console.log(allCss.fontSize)    // we are using DOM-property
+
+
+
+    </script>
+    
+</body>
+</html>

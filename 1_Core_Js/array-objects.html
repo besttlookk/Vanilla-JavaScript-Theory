@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array and objects</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h3>this is heading</h3>
+    </div>
+
+
+    <script>
+        // two types of value can be stored in variables:PRIMITIVES & refrence(objects)
+
+        // primititive 
+        //integer
+       // let myvar = 34;
+        //strings
+        //let myvar2 = "strings";
+        //boolean
+        //let myvar3 = true;
+        // special variables
+        //let myvar4 = null;
+        //let myvar5 = undefined;
+
+
+        //object
+        let  employee = {name:"prabhash", salary:'100rs', channel:'codewithme','channel 2':'savewithme'}
+        console.log(employee);
+        console.log(employee.name);
+        //another way to do it.
+        console.log(employee['name']);
+        //but if we want to access that key whcih has sapce in it.we have to se second option.
+        console.log(employee['channel 2']);
+
+        // array
+        let names = [1, 2, 4, "prabhash", undefined];
+        // console.log(names)
+        // console.log(names[0])
+        // or
+       // let names = new Array(18, 2, 40, "prabhash", undefined);
+        // console.log(names)
+        // console.log(names.length)
+       // names = names.sort();
+        //console.log(names);
+
+        //to push new item in array
+        names.push('i am pushed');
+        console.log(names);
+
+    </script>
+</body>
+
+</html>

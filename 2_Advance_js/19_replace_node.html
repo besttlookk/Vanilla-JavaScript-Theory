@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mydiv">
+        <ul id='myul'>
+            <li>Item 1</li>
+            <li id='item_2'>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </div>
+
+
+    <script>
+    // The replaceChild(newChild, oldChild) method is used to repalce a node with new node.
+
+    // the new node could be an exisitning node in the documnet, or you can create a new node.
+
+    // it will destroy the content of nodes that are replaced.
+
+    // it returns the replaced node(oldChild)
+
+    //==========syntax===============
+
+    // let replacedNode = parentNode.replaceChild(newChild, oldChild)
+
+    //newchild is the new node to replace oldchild. if it already exists in the DOM, it is first removed.
+
+
+    let parentNode = document.getElementById('myul')
+    let oldChild = document.getElementById('item_2');
+
+    // newChild = document.createElement('li')
+    // newChild.textContent = 'new item'
+
+    // removedNode = parentNode.replaceChild(newChild, oldChild)
+    
+    // console.log(removedNode)
+    // console.log(parentNode);
+
+    // =============replacing with existing node.===========
+    existingNode = parentNode.children[0]
+    removedNode = parentNode.replaceChild(existingNode, oldChild)
+    console.log(removedNode)
+    console.log(parentNode);
+
+
+
+    </script>
+</body>
+</html>

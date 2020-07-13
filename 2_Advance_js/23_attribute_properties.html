@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Heading</h2>
+    <p id='myp' class="myclass" title="para"> Hello World</p> 
+
+
+    <script>
+      //=======setAttribute()===================
+      // this method is used to set the value of an attribute on the specifeid element.
+      //if the attribute exists, the value is updated; otherwise a new attributes is added with specified name and value.\
+      // we should not use this method to set inline style as it will 'overwrite' other CSS properties
+
+      //---syntax:
+    // Element.setAttribute(name, value)
+
+    //===========getAttribute()============
+    // The getAtribute() returns the value of a specified attribute on the element. 
+    // If the given attribute does not exist, the value returned will either be null or ''
+
+    //---syntax
+    // Element.getAttribute(attributeNAme)
+
+    let p = document.getElementById('myp');
+    // p.setAttribute('class', 'new class') // this method is not used much
+    // p.className = 'new class 2'
+    // console.log(p)
+
+    // let attr = p.getAttribute('id')
+    // console.log(attr)
+    // console.log(p.id)  // easy method(due to mapping)
+
+
+    let remove = p.removeAttribute('class')
+    console.log(p)
+    console.log(remove)
+
+      // to check the attribute
+    console.log(p.hasAttribute('class'))
+
+
+    </script>
+</body>
+</html>

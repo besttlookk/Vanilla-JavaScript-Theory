@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class='title'>Attribute properties</title>
+</head>
+<body>
+    <h1 id='myid' class='myclass'>we are learning JS <!-- This is comment --> </h1>
+    <p id="myid1">I am Paragraph</p>
+
+    <script>
+    
+    //=====Two properties: nodeName & nodeValue
+    //=====every tag can have many attributies
+    
+    //=================older version===============================
+    // var elm = document.getElementById('myid')
+    // console.log(elm.attributes) // NamedNodeMap
+    // console.log(elm.attributes[0])  // key-value pair
+    // console.log(elm.attributes[1])  // key-value pair
+    // console.log(elm.attributes[0].nodeName)    //id
+    // console.log(elm.attributes[0].nodeValue)    //myid
+
+    // changing attribute value
+    // elm.attributes[0].nodeValue = 'mynewid'
+    // console.log(elm.attributes[0].nodeValue)    //mynewid
+
+    // console.log(elm.attributes[1].nodeName)    //class
+    // console.log(elm.attributes[1].nodeValue)    //myclass
+
+    // to know the total number of attributes
+    // console.log(elm.attributes.length)  //2
+    
+    // for(let i= 0; i<elm.attributes.length; i++ ){
+    //     console.log(elm.attributes[i].nodeName)    
+    //     console.log(elm.attributes[i].nodeValue) 
+
+    // }
+
+    // =============================Latest Version=========================
+    // NOTE: Above code will not work in future
+    //NOTE: nodeName is now replaced by name
+    //NOTE: nodeValue is now replaced by value
+
+    // var elm = document.getElementById('myid')
+    // console.log(elm.attributes)  // NamedNodeMap
+    // console.log(elm.attributes[0])  // name-value pair
+    // console.log(elm.attributes[1])  // name-value pair
+    // console.log(elm.attributes[0].name)    //id
+    // console.log(elm.attributes[0].value)    //myid
+    // console.log(elm.attributes[1].name)    //class
+    // console.log(elm.attributes[1].value)    //myclass
+
+    // // changing attribute value
+    // elm.attributes[0].nodeValue = 'mynewid'
+    // console.log(elm.attributes[0].value)    //mynewid
+
+    
+
+    // to know the total number of attributes
+    // console.log(elm.attributes.length)  //2
+
+    // for(let i= 0; i<elm.attributes.length; i++ ){
+    //     console.log(elm.attributes[i].name)    
+    //     console.log(elm.attributes[i].value) 
+
+    // }
+
+    </script>
+</body>
+</html>

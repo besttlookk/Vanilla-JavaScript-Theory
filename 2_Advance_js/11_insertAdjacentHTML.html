@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node tuitorial</title>
+</head>
+<body>
+    <div class="mydiv">
+        <h1 id="myh1">Heading 1</h1>
+        <h2 id="myh2">Heading 2</h2>
+        <h3 id="myh3">Heading 3</h3>
+    </div>
+
+
+
+
+
+
+    <script>
+//The insertAdjacentHTML() method is used to insert a text as HTML(parse the specifed text as HTML or XML) inti a specified pposition.
+
+//=======================syntax: elemet.insertAdjacentHTML('position', text);
+
+// where positions are: 
+        // 'beforebegin': Before the element itself
+        //'afterbehin': Just inside the element before its first child
+        //'beforeend': Just inside the element, after its last child
+        // 'afterend': After the element itself
+
+    // text: The string to be parsed as HTML or XML and inserted into the tree.
+
+// It is recommended you not use insertAdjacentHTML when inserting plain text instead, use the node.textContent property.
+    
+    let targetElemet = document.getElementById('myh2');
+    let myhtml = '<span> Hello World </span>'
+    let parent = targetElemet.parentElement
+
+    // targetElemet.insertAdjacentHTML('beforebegin', myhtml);
+    // targetElemet.insertAdjacentHTML('afterbegin', myhtml);
+    // targetElemet.insertAdjacentHTML('beforeend', myhtml);
+    targetElemet.insertAdjacentHTML('afterend', myhtml);
+
+    console.log(parent)
+    </script>
+</body>
+</html>

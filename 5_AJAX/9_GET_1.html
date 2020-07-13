@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div>
+            <table id="table">
+                <tr><th>ID</th> 
+                    <th>Title</th> 
+                    <th>Body</th>
+                </tr>
+            </table>
+    </div>
+    <input type="submit" value="submit" id="btn">
+    <script>
+        document.getElementById('btn').addEventListener("click", makerequest);
+        let name = document.getElementById('name')
+        let age = document.getElementById('age')
+    
+
+      
+        // function makerequest(){
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('GET','https://jsonplaceholder.typicode.com/posts/1', true); // single data
+        //     xhr.responseType = 'json'
+        //     xhr.onload = ()=> {
+                
+        //         if(xhr.status == 200){
+        //             // console.log(xhr.response)
+        //             console.log(xhr.response.userId)
+        //             console.log(xhr.response.title)
+        //             console.log(xhr.response.body)
+                
+        //         }
+        //         else{
+        //                 console.log('status is not 200')
+        //         }
+        //     };
+
+  
+        //     xhr.send();
+   
+        //     }
+
+
+        //======================multiple data===================================
+        var table = document.getElementById('table')
+        function makerequest(){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET','https://jsonplaceholder.typicode.com/posts', true); // single data
+            xhr.responseType = 'json'
+            xhr.onload = ()=> {
+                
+                if(xhr.status == 200){
+                    x = xhr.response;
+                    for(i=0; i< x.length; i++){
+
+                        table.innerHTML += `<tr><td>${x[i].id}</td> <td>${x[i].title}</td> <td>${x[i].body}</td></tr>`
+                      
+                    }
+                
+                }
+                else{
+                        console.log('status is not 200')
+                }
+            };
+
+  
+            xhr.send();
+   
+            }
+
+
+
+      
+     
+    </script>
+</body>
+</html>
