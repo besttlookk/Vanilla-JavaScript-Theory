@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node tuitorial</title>
+</head>
+<body>
+    
+    
+    <a name="html" href="#">HTML Tutorial</a><br>
+    <a name="css" href="#">CSS Tutorial</a><br>
+    <a name="xml" href="#">XML Tutorial</a><br>
+
+    <!-- <embed src="#"> -->
+
+    <form>
+        First Name: <input type="text" name="fname" value="Donald"><br>
+        Last Name: <input type="text" name="lname" value="Duck">
+    </form>
+
+
+
+
+
+    <script>
+    //    to see all web page properties  
+        // console.dir(document)
+        // console.log(document)  // it gives whole DOM
+
+        // ====anchore=========================name attribute is must to get the result.
+        // console.log(document.anchors)   //HTMLCollection
+        // console.log(document.anchors.length)
+        // console.log(document.anchors.item(1))  //The item() method returns the element at the specified index in an HTMLCollection.
+        // console.log(document.anchors[1])  // shortcut for above
+        // console.log(document.anchors.namedItem('xml'))  //The namedItem() method returns the element with the specified ID, or name, in an HTMLCollection.
+        // console.log(document.anchors['xml'])  // shortcut of above example
+
+
+        // console.log(document.baseURI)  // read-only
+
+        // console.log(document.body)
+
+        // document.cookie="username=John Doe; expires=Thu, 18 Dec 2020 12:00:00 UTC; path=/";  // setting cookie
+        // console.log(document.cookie)  //
+
+        //console.log(document.characterSet) //The characterSet property returns the character encoding for the document.
+
+        // console.log(document.defaultView) //The defaultView property returns the document's Window Object.
+
+        // console.log(document.designMode)   //The designMode property sets or returns whether the document is editable or not.
+
+        // console.log(document.doctype)
+        // console.log(document.doctype.name)
+
+        // console.log(document.documentElement) // returns the documentElement of the document, as an Element object.For HTML documents the returned object is the <html> element.
+       //Tip: The difference between this property and the document.body property, is that the document.body element returns the <body> element,
+       // while the document.documentElement returns the <html> element.
+
+        // console.log(document.documentURI) //The documentURI property sets or returns the location of a document.
+
+        //console.log(document.domain)
+
+        // console.log(document.embeds)
+        // console.log(document.embeds.length)
+
+        // console.log(document.forms) // HTMLCollection
+        // console.log(document.forms.length)
+
+        // console.log(document.head)   //The head property returns the <head> element of the current document.
+                                    //Note: If there are more than one <head> element in the document, this property returns the first one.
+
+        // console.log(document.images) //HTMLCollection
+
+        // console.log(document.implementation)
+
+        // console.log(document.inputEncoding)   //The inputEncoding property returns the character encoding for the document.
+
+        // console.log(document.lastModified)
+
+        // console.log(document.links)    //The links collection returns a collection of all links in the document.
+                                       //The links in the collection represents <a> elements and/or <area> elements with a href attribute.
+                                       // Note: If the element is missing the href attribute, nothing is returned.
+
+        // console.log(document.readyState)  //The readyState property returns the (loading) status of the current document.(read-only)
+                                         //uninitialized / loading/ loaded / interactive / complete
+
+        // console.log(document.referrer)   The referrer property returns the URL of the document that loaded the current document.
+
+        // console.log(document.scripts)
+        // console.log(document.scripts.length)
+
+        // console.log(document.title)
+        // document.title = 'new tiitle'
+
+        // console.log(document.URL)
+
+
+//=========================Trivia[Console.log vs console.dir]=====================================================
+        /* 
+        In simple words, the console.log() returns the object in its string representation and 
+        console.dir() recognizes the 'object' just as an object and outputs its properties. 
+        Both log() and dir() returns the string just as a string.
+        
+        */
+        // var str = "Howdy GeeksforGeeks"
+        // var geek = { 
+        //     book: "harrypotter", 
+        //     price: "2000"
+        // }; 
+        // var geek2 = [10, 20, 30]; 
+        // console.log(str); 
+        // console.dir(str); 
+        // console.dir(geek); 
+        // console.log("geek (log) = ", geek); 
+        // console.dir(geek2); 
+        // console.log("geek2 (log) = ", geek2); 
+
+        // Prints only string as dir() takes 
+        // only one parameter. 
+        // console.dir("geek2 (dir) = ", geek2); 
+
+//=============List of all the methhods of the document object===================================================
+/*
+    1. addEventListener()
+    2. adoptNode()               : The adoptNode() method adopts a node from another document.
+    3. close()                  :  method closes the output stream previously opened with the document.open() method, and displays the collected data in this process.
+    4. createAttribute()        :  method creates an attribute with the specified name, and returns the attribute as an Attr object.
+    5. createComment()          :  method creates a Comment node with the specified text.
+    6. createDocumentFragment() : method creates an imaginary Node object, with all the properties and methods of the Node object.
+    7. createElement()          : method creates an Element Node with the specified name.
+    8. createEvent()            : method creates an event object.
+    9. The createTextNode()     : method creates a Text Node with the specified text.
+    10. getElementById()
+    11. getElementsByClassName()
+    12. getElementByName()      : The getElementsByName() method returns a collection of all elements in the document with the specified name
+                                 (the value of the name attribute), as an HTMLCollection object.
+    13. getElementsByTagName()
+    14. document.hasFocus()      :  The hasFocus() method returns a Boolean value indicating whether the document (or any element inside the document) has focus.
+    15. importNode()             : The importNode() method imports a node from another document.
+    16. normalize()              : The normalize() method removes empty Text nodes, and joins adjacent Text nodes.
+    17. open()
+    18. querySelector()
+    19. querySelectorAll()
+    20. removeEventListener()
+    21. write()
+    22. writeIn()
+
+
+
+
+*/
+  
+</script>
+</body>
+</html>

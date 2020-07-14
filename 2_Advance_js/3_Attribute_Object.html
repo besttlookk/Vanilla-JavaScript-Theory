@@ -43,10 +43,22 @@
     //NOTE: nodeName is now replaced by name
     //NOTE: nodeValue is now replaced by value
 
-    // var elm = document.getElementById('myid')
+    var elm = document.getElementById('myid')
     // console.log(elm.attributes)  // NamedNodeMap
-    // console.log(elm.attributes[0])  // name-value pair
+
+    console.log(elm.attributes.item(0))   //Returns the attribute node at a specified index in a NamedNodeMap
+    console.log(elm.attributes[0])  // name-value pair (short version)
     // console.log(elm.attributes[1])  // name-value pair
+
+    console.log(elm.attributes.getNamedItem('id'))  // using attribute name
+    console.log(elm.attributes['id'])  // name-value pair
+
+    console.log(elm.attributes.removeNamedItem('id'))  //remove attribute by name
+    console.log(elm.attributes)
+
+    //namednodemap.setNamedItem(node) //The setNamedItem() method adds the specified node to the NamedNodeMap.
+                                    //If the node already exists, it will be replaced, and the replaced node will be the return value, otherwise the return value will be null.
+                                    //Instead of working with attribute nodes, you could use the element.setAttribute() method to add an attribute with a value to an element.
     // console.log(elm.attributes[0].name)    //id
     // console.log(elm.attributes[0].value)    //myid
     // console.log(elm.attributes[1].name)    //class
@@ -66,6 +78,16 @@
     //     console.log(elm.attributes[i].value) 
 
     // }
+
+    //=====================The NamedNodeMap Object================================
+
+    //In the HTML DOM, the NamedNodeMap object represents an unordered collection of an elements attribute nodes.
+
+    // Nodes in a NamedNodeMap can be accessed by name or by index (number).
+
+    // var elm = document.getElementById('myid')
+    // console.log(elm.attributes[0].specified)
+
 
     </script>
 </body>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        .class1{
+            font-size: large;
+        }
+        .class2{
+            color: aqua;
+        }
+        #myDIV3 {
+            height: 250px;
+            width: 400px;
+            padding: 10px;
+            margin: 15px;
+            border: 5px solid red;
+            background-color: lightblue;
+        }
+
+        #myDIV4 {
+  margin-top: 10px;
+  height: 250px;
+  width: 250px;
+  overflow: auto;
+}
+
+#content {
+  height: 800px;
+  width: 2000px;
+  padding: 10px;
+  background-color: coral;
+}
+    </style>
+</head>
+<body>
+    <a id="w3s" href="https://www.w3schools.com/">W3Schools</a><br>
+
+    <input type="button"  value="Get focus" id="focus">
+    <input type="button"  value="Lose focus" id="blur">
+
+    <br><br>
+    <div id="myDIV">
+        <p>First p element</p>
+        <p>Second p element</p>
+    </div>
+    <div id="myDIV2" class="mystyle class4">
+        I am a DIV element
+        </div>
+
+        <div id="myDIV3">
+            <b>Information about this div:</b><br>
+            Height: 250px<br>
+            Width: 400px<br>
+            padding: 10px<br>
+            margin: 15px<br>
+            border: 5px<br>
+            <p id="demo"></p>
+          </div>
+
+          <p id="myp">
+            <strong>Possible return values:</strong><br>
+            1: The two nodes do not belong to the same document.<br>
+            2: p1 is positioned after p2.<br>
+            4: p1 is positioned before p2.<br>
+            8: p1 is positioned inside p2.<br>
+            16: p2 is positioned inside p1.<br>
+            32: The two nodes has no relationship, or they are two attributes on the same element.</p>
+
+
+            <p id="myP2">This is a paragraph. Click the button to make me editable.</p>
+
+        
+
+    <div id="test">
+        <p>  Click the button to get offsetLeft for the test div.</p>
+        <p><button id="offbtn">Try it</button></p>
+     <p id="demo2"> </p>
+    </div>
+
+    <div id="myDIV4">
+        <div id="content">Some content..</div>
+      </div>
+      
+      <p id="demo3"></p>
+
+
+
+    <script>
+        //==================================================properties=======================================
+
+    //  ----------1. accessKey:The accessKey property sets or returns the accesskey attribute of an element.
+    // var w3 = document.getElementById('w3s')
+    
+    //The accesskey attribute specifies a shortcut key to activate/focus an element.
+    // console.log(w3.accessKey) // nothing rightnow
+    // w3.accessKey = 'w';
+    // console.log(w3.accessKey) // w (alt + w) to open
+
+    //------2. attributes 
+    // console.log(w3.attributes)  //NamedNodeMap
+    // console.log(w3.attributes.getNamedItem('href'))
+    // console.log(w3.attributes['href'])
+    // console.log(w3.attributes.item('1'))
+    // console.log(w3.attributes[1])
+    // console.log(w3.attributes[1].name)
+    // console.log(w3.attributes[1].value)
+
+
+    //------3.childElementCount : The childElementCount property returns the number of child elements an element has.(read-only)
+
+        // let div = document.getElementById('myDIV')
+        // console.log(div.childElementCount)
+        /*  
+        Tip: Use the children property to return any child element of a specified element.
+
+        Tip: The childElementCount property will produce the same result as element.children.length.
+
+        */
+        // console.log(div.children)   //HTMLCollection
+        // console.log(div.children.length)
+
+
+    //-------4. childNodes: The childNodes property returns a collection of a node's child nodes, as a NodeList object.
+
+    //Note: Whitespace inside elements is considered as text, and text is considered as nodes. Comments are also considered as nodes.
+
+    
+    // let div = document.getElementById('myDIV')
+    // console.log(div.childNodes)  //NodeList
+
+    //------5. children: The children property returns a collection of an element's child elements, as an HTMLCollection object.
+
+    //The difference between this property and childNodes, is that childNodes contain all nodes, including text nodes and comment nodes, while children only contain element nodes.
+
+
+    //------6. classList : The classList property returns the class name(s) of an element, as a DOMTokenList object.
+
+    //This property is useful to add, remove and toggle CSS classes on an element.
+
+    //The classList property is read-only, however, you can modify it by using the add() and remove() methods.
+
+    // let div = document.getElementById('myDIV2')   //DOMTokenList
+
+    // console.log(div.classList)  //DOMTokenList
+    // console.log(div.classList.length)
+    // console.log(div.classList.contains('classname'))
+    // console.log(div.classList.add('class1', 'class2'))  //Adds one or more class names to an element. If the specified class already exist, the class will not be added
+    // console.log(div.classList)
+    // console.log(div.classList.item(1)) //Returns the class name with a specified index number from an element. Index starts at 0.
+    // console.log(div.classList.remove('class1', 'class2')) //Removes one or more class names from an element. Note: Removing a class that does not exist, does NOT throw an error
+    // console.log(div.classList)
+    // console.log(div.classList.toggle('class3')) //Toggles between a class name for an element.
+                                                //The first parameter removes the specified class from an element, and returns false.
+                                                //If the class does not exist, it is added to the element, and the return value is true.
+                                                //The optional second parameter is a Boolean value that forces the class to be added or removed, 
+                                                //regardless of whether or not it already existed.
+    // console.log(div.classList)
+    
+
+
+    //-------7. className: The className property sets or returns the class name of an element (the value of an element's class attribute).
+    //Tip: A similar property to className is the classList property.
+
+    // let div = document.getElementById('myDIV2')   
+    // console.log(div.className)  // only name not list
+    // console.log(div.className.length)  // will gave length of string
+
+
+    //--------8. clientHeight : The clientHeight property returns the viewable height of an element in pixels, including padding, but not the border, scrollbar or margin.
+    /*The reason why the "viewable" word is specified, is because if the element's content is taller than the actual height of the element, 
+      this property will only return the height that is visible 
+      
+       This property is often used together with the clientWidth property.
+
+       Tip: Use the offsetHeight and offsetWidth properties to return the viewable height and width of an element, including padding, border and scrollbar.
+
+       Tip: To add scrollbars to an element, use the CSS overflow property.
+
+      This property is read-only.
+      
+      */
+
+
+    //--------9.clientWidth
+
+    //--------10.offsetHeight: The offsetHeight property returns the viewable height of an element in pixels, including padding, border and scrollbar, but not the margin.
+
+    //--------11.offsetWidth
+        // div = document.getElementById('myDIV3')
+        // div.addEventListener('click', ()=>{
+        //     console.log('client Height', div.clientHeight) 
+        //     console.log('offset Height', div.offsetHeight)  // clientHeight + margin(both side)
+        //     console.log(div.clientWidth)
+        //     console.log(div.offsetWidth)
+        // })
+
+    //------12. clientLeft: The clientLeft property returns the width of the left border of an element, in pixels.
+
+    //Tip: You can also use the style.borderLeftWidth property to return the width of an element's left border.
+
+        
+    //------13. clientTop: The clientTop property returns the width of the top border of an element, in pixels.
+
+    //This property does not include the element's top padding or top margin.
+
+    // div = document.getElementById('myDIV3')
+    //     div.addEventListener('click', ()=>{
+    //         console.log(div.clientLeft)
+    //         console.log(div.clientTop)
+    //     })
+
+    //----------------------------14. contentEditable   & isContentEditable
+    /*
+    The contentEditable property sets or returns whether the content of an element is editable or not.
+
+Tip: You can also use the isContentEditable property to find out if the content of an element is editable or not.
+
+Possible values:
+"inherit" - Default. The element's content is editable if its parent element is editable
+"true" - The content is editable
+"false" - The content is not editable
+    
+    */
+
+    // let p = document.getElementById('myP2')
+    // console.log(p.contentEditable) // inherit
+    // console.log(p.isContentEditable) // false
+    // p.addEventListener('click',()=>{
+    //     p.contentEditable = true;
+    // console.log(p.contentEditable) // inherit
+    // })
+
+
+//--------------------------------15. dir
+/*
+The dir property sets or returns the value of the dir attribute of an element.
+
+The dir attribute specifies the text-direction (reading order) of the element's content.
+
+Tip: You can also use the style.direction property to set or return the text direction of an element.
+*/
+
+/*
+ltr	Default. Left-to-right text direction
+rtl	Right-to-left text direction
+auto	Let the browser figure out the text direction, based on the content (only recommended if the text direction is unknown)
+
+*/
+
+// let p = document.getElementById('myP2')
+// console.log(p.dir)
+// // p.dir = 'rtl'
+// // p.dir = 'auto'
+// p.dir = 'ltr'
+
+//----------------------------16. id
+
+
+//---------------------------17.innerHTML
+
+
+//--------------------------18. innerText
+/*
+The innerText property sets or returns the text content of the specified node, and all its descendants.
+
+If you set the innerText property, any child nodes are removed and replaced by a single Text node containing the specified string.
+
+Note: This property is similar to the textContent property, however there are some differences:
+
+textContent returns the text content of all elements, while innerText returns the content of all elements, except for <script> and <style> elements.
+innerText will not return the text of elements that are hidden with CSS (textContent will). 
+Tip: To set or return the HTML content of an element, use the innerHTML property.
+
+
+*/
+
+//-------------------------19.lang
+// let p = document.getElementById('myP2')
+// p.lang = 'en'
+// console.log(p.lang)
+
+//-----------------------20. lastChild
+
+
+//---------------------21.lastElementChild
+
+//----------------------22. nextSibling
+
+//---------------------23.nextElementSibling
+
+//---------------------24. nodeName
+/*
+The nodeName property returns the name of the specified node.
+
+If the node is an element node, the nodeName property will return the tag name.
+
+If the node is an attribute node, the nodeName property will return the name of the attribute.
+
+For other node types, the nodeName property will return different names for different node types.
+
+Tip: You can also use the tagName property to return the tag name of an element. The difference is that tagName only return tag names, while nodeName returns the name of all nodes (tags, attributes, text, comments).
+
+This property is read-only.
+*/
+// let p = document.getElementById('myP2')
+// console.log(p.nodeName)  // P
+
+
+//--------------------25. nodeType
+/*
+The nodeType property returns the node type, as a number, of the specified node.
+
+If the node is an element node, the nodeType property will return 1.
+
+If the node is an attribute node, the nodeType property will return 2.
+
+If the node is a text node, the nodeType property will return 3.
+
+If the node is a comment node, the nodeType property will return 8.
+
+This property is read-only.
+
+*/
+
+//------------------26. nodeValue
+/*
+The nodeValue property sets or returns the node value of the specified node.
+
+If the node is an element node, the nodeValue property will return null.
+
+Note: If you want to return the text of an element, remember that text is always inside a Text node, and you will have to return the Text node's node value (element.childNodes[0].nodeValue).
+
+For other node types, the nodeValue property will return different values for different node types.
+
+Tip: An alternative to the nodeValue property can be the textContent property.
+
+
+*/
+
+//----------------------27.offsetLeft
+/*
+The offsetLeft property returns the left position (in pixels) relative to the left side the offsetParent element.
+
+The returned value includes:
+
+the left position, and margin of the element
+the left padding, scrollbar and border of the offsetParent element
+Note: The offsetParent element is the nearest ancestor that has a position other than static.
+
+Tip: To return the top position of an element, use the offsetTop property.
+*/
+
+//-----------------------28. offsetParent
+/*
+The offsetParent property returns the nearest ancestor that has a position other than static.
+
+Note: offsetParent is used with the offsetLeft, and offsetTop properties.
+
+Tip: offsetParent will return null if the element is set to display="none".
+
+*/
+
+//------------------------29. offsetTop
+/*
+The offsetTop property returns the top position (in pixels) relative to the top of the offsetParent element.
+
+The returned value includes:
+
+the top position, and margin of the element
+the top padding, scrollbar and border of the offsetParent element
+Note: The offsetParent element is the nearest ancestor that has a position other than static.
+
+Tip: To return the left position of an element, use the offsetLeft property.
+
+*/
+
+// document.getElementById('offbtn').addEventListener('click',()=>{
+//     var testDiv = document.getElementById("test");
+//     var demoDiv = document.getElementById("demo2");
+//     demoDiv.innerHTML = `offset Left:<b> ${testDiv.offsetLeft} </b>, offset Top: <b>${testDiv.offsetTop}</b>`
+// })
+
+//-----------------------30. outerHTML
+
+
+//-----------------------31. outerText
+/*
+The outerText property sets or returns the text content of the specified node.
+
+This property is similar to the inner innerText property, in fact getting the outerText returns the same result as getting the innerText property.
+
+There are an important difference when setting an element's outerText, because the element itself is removed.
+
+//------------------------32. parentNode
+/*
+The parentNode property returns the parent node of the specified node, as a Node object.
+
+Note: In HTML, the document itself is the parent node of the HTML element, HEAD and BODY are child nodes of the HTML element.
+
+This property is read-only.
+
+//------------------------33. parentElement
+/*
+The parentElement property returns the parent element of the specified element.
+
+The difference between parentElement and parentNode, is that parentElement returns null if the parent node is not an element node:
+
+
+*/
+
+//------------------------34. previousSibling
+
+
+//------------------------35. previousElementSibling
+
+
+//------------------------36. scrollHeight
+/*
+The scrollHeight property returns the entire height of an element in pixels, including padding, but not the border, scrollbar or margin.
+
+Tip: Use the scrollWidth property to return the entire width of an element.
+
+The scrollWidth and scrollHeight properties return the entire height and width of an element, including the height and width that is not viewable (because of overflow).
+
+Tip: To add scrollbars to an element, use the CSS overflow property.
+
+This property is read-only.
+
+//-------------------------37. scrollWidth
+/*
+The scrollWidth property returns the entire width of an element in pixels, including padding, but not the border, scrollbar or margin.
+
+Tip: Use the scrollHeight property to return the entire height of an element.
+
+The scrollWidth and scrollHeight properties return the entire height and width of an element, including the height and width that is not viewable (because of overflow).
+
+Tip: To add scrollbars to an element, use the CSS overflow property.
+
+This property is read-only.
+
+*/
+
+//----------------------------38. scrollLeft
+/*
+The scrollLeft property sets or returns the number of pixels an element's content is scrolled horizontally.
+
+Tip: Use the scrollTop property to set or return the number of pixels an element's content is scrolled vertically.
+
+Tip: To add scrollbars to an element, use the CSS overflow property.
+*/
+
+//-----------------------------39. scrollTop
+/*
+The scrollTop property sets or returns the number of pixels an element's content is scrolled vertically.
+
+Tip: Use the scrollLeft property to set or return the number of pixels an element's content is scrolled horizontally.
+
+Tip: To add scrollbars to an element, use the CSS overflow property.
+
+Tip: The onscroll event occurs when an element's scrollbar is being scrolled.
+*/
+
+//--------------------------------40. style
+/*
+The style property returns a CSSStyleDeclaration object, which represents an element's style attribute.
+
+The style property is used to get or set a specific style of an element using different CSS properties.
+
+Note: It is not possible to set styles by assigning a string to the style property, e.g. element.style = "color: red;". To set the style of an element, append a "CSS" property to style and specify a value, like this:
+
+*/
+/*
+As you can see, the JavaScript syntax for setting CSS properties is slightly different than CSS (backgroundColor instead of background-color).
+
+
+Note: The style property only returns the CSS declarations set in the element's inline style attribute, e.g.
+<p style="color: red;">. It is not possible to use this property to get information about style rules from the <head> section in the document or external style sheets.
+*/
+// div = document.getElementById('myDIV3')
+// div.style.backgroundColor = "red";
+// console.log(div.style)
+
+//--------------------------41.tagName
+
+
+//-------------------------42.textContent
+
+//-------------------------43.title
+
+
+
+
+
+
+
+
+
+    //=====================================================Method=======================================
+
+    //-------------------------------- 1.addEventListner()
+
+    //---------------------------------2. appendChild()
+
+    //---------------------------------3.blur()
+    // document.getElementById('blur').addEventListener('click', ()=>{
+    //     document.getElementById('w3s').blur()
+    // })
+
+    //----------------------------------4. focus()
+    // document.getElementById('focus').addEventListener('click', ()=>{
+
+    //     document.getElementById('w3s').focus()
+    // })
+
+    //-----------------------------------5. click()
+
+    //----------6. cloneNode():The cloneNode() method creates a copy of a node, and returns the clone. The cloneNode() method clones all attributes and their values.
+    /* 
+    
+    Tip: Use the appendChild() or insertBefore() method to insert the cloned node to the document.
+
+    Tip: Set the deep parameter value to true if you want to clone all descendants (children), otherwise false.
+*/
+
+
+    //--7. compareDocumentPosition():The compareDocumentPosition() method compares two nodes, and returns an integer describing where they are positioned in the document.
+    /*
+    Look at the example above. The possible return values would specify:
+
+1: No relationship, the two nodes do not belong to the same document.
+
+2: The first node (p1) is positioned after the second node (p2).
+
+4: The first node (p1) is positioned before the second node (p2).
+
+8: The first node (p1) is positioned inside the second node (p2).
+
+16: The second node (p2) is positioned inside the first node (p1).
+
+32: No relationship, or the two nodes are two attributes on the same element.
+    
+    */
+
+// div = document.getElementById('myDIV3')
+// p = document.getElementById('myp')
+// console.log(div.compareDocumentPosition(p))
+// console.log(p.compareDocumentPosition(div))
+
+
+//---------------------------8. contains()
+//The contains() method returns a Boolean value indicating whether a node is a descendant of a specified node.
+//A descendant can be a child, grandchild, great-grandchild, and so on.
+
+// div = document.getElementById('myDIV3')
+// p = document.getElementById('myp')
+// demop = document.getElementById('demo')
+// console.log(div.contains(demop))   // true
+// console.log(div.contains(p))   // false
+
+
+//------------------------9. firstChild()
+//he firstChild property returns the first child node of the specified node, as a Node object.
+
+/*
+The difference between this property and firstElementChild, is that firstChild returns the first child node as an element node, a text node or a comment node (depending on which one's first), while firstElementChild returns the first child node as an element node (ignores text and comment nodes).
+*/
+
+//-----------------------10.firstElementChild()
+
+//-----------------------11. getAttribute()
+/*
+The getAttribute() method returns the value of the attribute with the specified name, of an element.
+
+Tip: Use the getAttributeNode() method if you want to return the attribute as an Attr object.
+
+Note: If the attribute does not exist, the return value is null or an empty string ("")
+
+*/
+    // div = document.getElementById('myDIV2')
+    // console.log(div.getAttribute('id'))
+    // console.log(div.getAttribute('class'))
+
+//----------------------12. setAttribute()
+/*
+The setAttribute() method adds the specified attribute to an element, and gives it the specified value.
+
+If the specified attribute already exists, only the value is set/changed.
+
+Note: Although it is possible to add the style attribute with a value to an element with this method, it is recommended that you use properties of the Style object instead for inline styling, because this will not overwrite other CSS properties that may be specified in the style attribute:
+
+*/
+// div = document.getElementById('myDIV2')
+// div.setAttribute('name', 'divName')
+// console.log(div)
+
+//-----------------------14. removeAttribute()
+// div = document.getElementById('myDIV2')
+// div.removeAttribute('name')
+// console.log(div)
+
+
+//----------------------15.hasAttribute()  & hasAttributes()
+// div = document.getElementById('myDIV2')
+// console.log(div)
+// console.log(div.hasAttribute('name'))
+// console.log(div.hasAttributes())  //The hasAttributes() method returns true if the specified node has any attributes, otherwise false.
+// console.log(div.hasAttribute('id'))
+// console.log(div.hasAttributes('id'))
+
+
+//-----------------------16.getAttributeNode()  & removeAttribueNode()  &setAttribueNode
+/*
+The getAttributeNode() method returns the attribute node with the specified name of an element, as an Attr object.
+
+Tip: Use the attribute.value property to return the value of the attribute node.
+
+Tip: Use the getAttribute() method if you just want to return the attribute value.
+
+*/
+
+// div = document.getElementById('myDIV2')
+// console.log(div.getAttributeNode('id')) // name-value
+// console.log(div.getAttribute('id'))
+
+
+//---------------------17. getElementsByClassName()
+
+
+//---------------------18. getElementByTagName()
+
+
+//---------------------19. hasChildNodes(): The hasChildNodes() method returns true if the specified node has any child nodes, otherwise false.
+
+
+//--------------------20. insertAdjacentElement():inserts a the specified element into a specified position.
+
+
+//--------------------21. insertAdjacentHTML():The insertAdjacentHTML() method inserts a text as HTML, into a specified position.
+
+
+//--------------------22. insertAdjacentText():inserts a the specified element into a specified position.
+
+
+//--------------------23. insertBefore()
+
+
+//--------------------24.isEqualNode()
+/*
+The isEqualNode() method checks if two nodes are equal.
+
+Two nodes are equal if all the following conditions are true:
+
+They have the same Node Type
+They have the same nodeName, NodeValue, localName, nameSpaceURI and prefix
+They have the same childNodes with all the descendants
+They have the same attributes and attribute values (the attributes does not have be in the same order)
+Tip: Use the isSameNode() method to determine if two nodes are the same node.
+
+*/
+
+
+//--------------------25. isSameNode()
+/*
+The isSameNode() method checks if two nodes are the same node.
+
+The isSameNode() method returns true if the two nodes are the same node, otherwise false.
+
+Tip: Use the isEqualNode() method to check if two nodes are equal, but not necessarily the same node.
+
+*/
+
+//-------------------26. normalize()
+    
+//-------------------27.querySelector()
+
+
+//------------------28.querySelectorAll()
+
+
+//------------------29.remove():  removes the specified element from the DOM.
+    
+//------------------30.removeChild()
+
+//------------------31.removeEventListener()
+
+//------------------32.replaceChild()
+    
+    </script>
+</body>
+</html>
