@@ -54,31 +54,31 @@ action should not be taken as it normally would be -->
 
 <script>
 
-    // function div1(e){
-    //     this.style.backgroundColor = 'red'
-    // }
-    // function div2(e){
-    //     this.style.backgroundColor = 'blue'
-    //     // e.stopPropagation()
-    //     e.stopImmediatePropagation()   // now it will not propagate to div2_2
-    // }
-    // function div2_2(e){
-    //     this.style.width = '350px'
+    function div1(e){
+        this.style.backgroundColor = 'red'
+    }
+    function div2(e){
+        this.style.backgroundColor = 'blue'
+        // e.stopPropagation()  // but it doesnot stop other click event on same div
+        e.stopImmediatePropagation()   // now it will not propagate to div2_2 // only one click event will on same div
+    }
+    function div2_2(e){
+        this.style.width = '350px'
         
 
-    // }
-    // function div3(e){
-    //     this.style.backgroundColor = 'green'
-    //     e.stopPropagation()
-    // }
-    // let divone = document.getElementById('one');
-    // let divtwo = document.getElementById('two');
-    // let divthree = document.getElementById('three');
+    }
+    function div3(e){
+        this.style.backgroundColor = 'green'
+        e.stopPropagation()
+    }
+    let divone = document.getElementById('one');
+    let divtwo = document.getElementById('two');
+    let divthree = document.getElementById('three');
 
-    // divone.addEventListener('click', div1, false)
-    // divtwo.addEventListener('click', div2, false)
-    // divtwo.addEventListener('click', div2_2, false)
-    // divthree.addEventListener('click', div3, false)
+    divone.addEventListener('click', div1, false)
+    divtwo.addEventListener('click', div2, false)
+    divtwo.addEventListener('click', div2_2, false)
+    divthree.addEventListener('click', div3, false)
 
 
     //

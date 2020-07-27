@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // ===================WEB DEV SIMPLIFIED======================================
+        // API_Data = fetch('https://reqres.in/api/users');
+        // console.log(API_Data);   // fetch is promise based, which means we can use async-await or .then/.catch
+
+        // fetch('https://reqres.in/api/users')   // fetch return us a 'response object'
+        //     .then(res =>  console.log(res)) // body has our data but this body of data is not directly asscessible from the response object. We need to call a method on it to convert this response to JSON. Since we are actually using json data
+
+
+        // console.log(fetch('https://reqres.in/api/users')  
+        //     .then(res =>  res.json()) )   // this json object also returns the promise
+
+
+        // fetch('https://reqres.in/api/users')  
+        //     .then(res =>  res.json())  
+        //     .then(data => console.log(data))
+        
+        
+        // trying to get user which do not exist.
+        // fetch('https://reqres.in/api/users/23')  
+        //     .then(res =>  res.json())  // but we still ran our seccesull .then   . lets try addding ".catch" too
+        //     .then(data => console.log(data))
+        
+            // trying to get user which do not exist.
+        // fetch('https://reqres.in/api/users/23')  
+        //     .then(res =>  res.json())  // but we still ran our successfull .then even if 404 was returned   . lets try addding ".catch" too
+        //     .then(data => console.log(data))
+        //     .catch(error => console.log("ERROR"))  // not getting any error message
+            // thats because the way fetch works : even thou we get 404 response(which means failure of the response), fetch always succeeds unless there is some kind of prob with network or browser error.
+            // so to avoid that what wwe need to do is insode the repsonse we need to check
+
+        // fetch('https://reqres.in/api/users/23')  
+        //     .then(res => {
+        //         if(res.ok) {
+        //             console.log('Success')
+        //         }
+        //         else{
+        //             console.log('Not Success')
+        //         }
+        //     })
+
+
+        // ============POST=============================================
+        // fetch('https://reqres.in/api/users', {
+        //     method: 'POST',
+        //     // data passed in body as json
+        //     body: {
+        //         'name': "User20",
+        //     }
+        // }).then(res => {
+        //         return res.json()
+        // }).then(data => console.log(data))
+        // it lookeed as it worked but our data did not show up . thats becoause the body didnt sent up correctly.
+        // the way fetch works that we actually neeend to send json.
+
+
+        // fetch('https://reqres.in/api/users', {
+        //     method: 'POST',
+        //     body: JSON.stringify({
+        //         'name': "User20",
+        //     })
+        // }).then(res => {
+        //         return res.json()
+        // }).then(data => console.log(data))// again not working because we also need to set headers.
+
+
+        
+
+        // fetch('https://reqres.in/api/users', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type' : 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         'name': "User20",
+        //     })
+        // }).then(res => {
+        //         return res.json()
+        // }).then(data => console.log(data))
+
+
+    </script>
+</body>
+</html>

@@ -15,6 +15,7 @@
 
 // Magazine Constructor
 // function Magazine(title,author,year,month) {
+        // isse sirf Book object ki intance variable ka accsess milega prototype variables and methods ka nahi
 //       Book.call(this,title,author,year);
 //       this.month = month;
 

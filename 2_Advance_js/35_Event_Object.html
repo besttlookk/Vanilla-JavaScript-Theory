@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="container">
     <!-- DOm events pass an Event object as an argument to handlres.
         This object contaons extra information about the event that occured. -->
         <!-- Ex: addEventListener('click', function(e){}) -->
@@ -14,6 +14,9 @@
         <h1 id="heading" class= "yourhead this is"> Welcome to Code With Harry</h1>
 
         <p id="myp">Click Me</p>
+        <div id="inputDiv">
+            <input type="text" id="input" >
+        </div>
     </div>
 <script>
             // document.getElementById('myp').addEventListener('click', function(e) {
@@ -26,30 +29,93 @@
             // })
 
 // =======================HARRY============================
-    // document.getElementById("heading").addEventListener("click",function(e){
+// document.getElementById('container').addEventListener('click', function(e){
+//     console.log('container target', e.target)
+//     console.log('conatiner currentTaget', e.currentTarget)
+// })
+
+
+    document.getElementById("heading").addEventListener("click",function(e){
     // console.log("you have clicked the heading")
     // location.href = "https://www.facebook.com"
+    // console.log(e.altKey) //Returns whether the "ALT" key was pressed when the mouse/key event was triggered
+    // console.log(e.bubbles)
+
+    // console.log(e.ctrlKey)
+
+
+    // console.log(e.offsetX); //Returns the horizontal coordinate of the mouse pointer relative to the position of the edge of the target element
+    // console.log(e.offsetY); //Returns the vertical coordinate of the mouse pointer relative to the position of the edge of the target element
+    // console.log(e.clientX); //Returns the horizontal coordinate of the mouse pointer, relative to the current window, when the mouse event was triggered
+    // console.log(e.clientY); //Returns the vertical coordinate of the mouse pointer, relative to the current window, when the mouse event was triggered
+
+    console.log(e.target);  //  Returns the element that triggered the event
+    console.log(e.target.dataset);  //  Returns the element that triggered the event
+    console.log(e.target.dataset.name);  //  Returns the element that triggered the event
+    console.log(e.currentTarget); //	Returns the element whose event listeners triggered the event
+    console.log(e.currentTarget.dataset);
+    console.log(e.currentTarget.dataset.name);
+
+
+    
+    
+    
     // variable = e.target;  //give element
     // variable = e.target.className;
     // variable = e.target.classList;
     // variable = Array.from(e.target.classList);
     
     
-    // variable = e.offsetX;
-    // variable = e.offsetY;
-    // variable = e.clientY;
-    // variable = e.clientX;
 
 // console.log(variable);
-//     })
+    })
 
-    document.querySelector('.container').addEventListener('mousemove', function(e){
-    console.log(e.offsetX, e.offsetY);
-    document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetX},120)`;
-    console.log('You triggered mouse move event')
-})
+//==================================keyborad event
 
-          
+
+document.getElementById('input').addEventListener('keypress', function(e){
+
+    // console.log(e.altKey)
+    // console.log(e.ctrlKey)
+    // console.log(e.code)
+
+    // console.log(e.target)
+    // console.log(e.currentTarget)
+ 
+    //  console.log(e.defaultPrevented)  //Returns whether or not the preventDefault() method was called for the event
+
+    // console.log(e.eventPhase) // 1:capture  2: at_target   3:bubble
+
+    // console.log(e.key)
+    // console.log(e.keyCode)
+
+    // console.log(e.location)
+    // console.log(e.metaKey)
+
+    // console.log(e.shiftKey)
+ 
+    // console.log(e.which)
+
+}, false)
+
+
+
+
+
+
+
+
+
+
+
+
+//     document.querySelector('.container').addEventListener('mousemove', function(e){
+//     console.log(e.offsetX, e.offsetY);
+//     document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetX},120)`;
+//     console.log('You triggered mouse move event')
+// })
+
+ 
         </script>
 
     </body>

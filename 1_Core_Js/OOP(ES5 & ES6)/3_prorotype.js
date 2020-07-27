@@ -2,6 +2,10 @@
 // in here we define function/method outside the main function defintion
 // when we initialize the object we get the funtion defination in its protype
 
+//Whenever we create a function(generic / constructor), two objects are automatically created:
+// 'prototype' is the property of the function/constructor which points to the 'prototype object'
+//prototype object can be 'accessed' using 'Function_name.prototype'
+
 function Book (title,author,year) {
 
     // instance member
@@ -11,6 +15,7 @@ function Book (title,author,year) {
     
 }
 
+// getsummary 'prototype object' me store hua na hi actual function me
 Book.prototype.getSummary=function() {
     return `${this.title} was written by ${this.author} in ${this.year}`
 }
