@@ -1,3 +1,34 @@
+/*
+In JavaScript, objects are king. 
+In JavaScript, almost "everything" is an object.
+   Booleans can be objects (if defined with the new keyword)
+   Numbers can be objects (if defined with the new keyword)
+   Strings can be objects (if defined with the new keyword)
+   Dates are always objects
+   Maths are always objects
+   Regular expressions are always objects
+   Arrays are always objects
+   Functions are always objects
+   Objects are always objects
+
+All JavaScript values, except primitives, are objects.
+
+
+Creating a JavaScript Object:
+  There are different ways to create new objects:
+    Create a single object, using an object literal.
+    Create a single object, with the keyword new.
+    Define an object constructor, and then create objects of the constructed type.
+    Create an object using Object.create().
+
+Using the JavaScript Keyword new:
+  The following example create a new JavaScript object using new Object(), and then adds 4 properties:
+    const person = new Object();
+    person.firstName = "John";
+    person.lastName = "Doe";
+    person.age = 50;
+    person.eyeColor = "blue";
+*/
 console.log("console is working fine");
 
 // let person = {
@@ -10,17 +41,13 @@ console.log("console is working fine");
 //----------------------------------------
 //        DISPLAING OBJECT
 
-
 // console.log(person.name);
 // console.log(person.age);
 // console.log(person.city);
 // console.log(person.fun);
 // console.log(person.fun());
 
-
 // console.log(person[0]);
-
-
 
 //  using for/in loop
 // let x, txt = "";
@@ -108,8 +135,6 @@ console.log("console is working fine");
 // harry.changeName("Harry2")
 // console.log(harry)
 
-
-
 // -------------------CONSTRUCTOR FUNCTION------------
 
 // function Person(firstName,lastName,dob) {
@@ -138,7 +163,6 @@ console.log("console is working fine");
 
 // but this is not the best way to do it bcoz when we print any new object it aslo print the function which we mind need while making new object . so we will use "prototype". by this we can attact the methods and properties inside prorototype
 
-
 // function Person(firstName, lastName, dob) {
 //    this.firstName = firstName;
 //    this.lastName = lastName;
@@ -163,25 +187,37 @@ console.log("console is working fine");
 
 // --------------------class----------------
 class Person {
-   constructor(firstName, lastName, dob) {
-      this.firstName = firstName;
-      this.lastName = lastName;
-      this.dob = dob;
-   }
-   getBirthYear() {
-      return this.dob.getFullYear();
-   }
-   getFullName() {
-      return `${this.firstName} ${this.lastName}`;
-   }
+  constructor(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = dob;
+  }
+  getBirthYear() {
+    return this.dob.getFullYear();
+  }
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
 
 // ----Instantiate object
 
-const person1 = new Person('Prabhash','Ranjan',4-3-1980);
-const person2 = new Person('Raushan','Jaiswal',3-6-1970);
+const person1 = new Person("Prabhash", "Ranjan", 4 - 3 - 1980);
+const person2 = new Person("Raushan", "Jaiswal", 3 - 6 - 1970);
 
 console.log(person1);
 console.log(person2);
 console.log(person1.getBirthYear());
 console.log(person1.getFullName());
+
+/*
+// ==Do Not Declare Strings, Numbers, and Booleans as Objects!===
+
+When a JavaScript variable is declared with the keyword "new", the variable is created as an object:
+
+    x = new String();        // Declares x as a String object
+    y = new Number();        // Declares y as a Number object
+    z = new Boolean();       // Declares z as a Boolean object
+
+Avoid String, Number, and Boolean objects. They complicate your code and slow down execution speed.
+*/

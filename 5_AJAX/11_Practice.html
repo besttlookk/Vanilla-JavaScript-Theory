@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">AJAX DATA FETCHING</h1>
+        <div class="mt-5">
+            <button class="btn btn-primary" id="text">Fetch Text</button>
+            <button class="btn btn-success">Fetch JSON </button>
+        </div>
+        <div class="body"></div>
+
+    </div>
+
+    <script>
+
+        document.getElementById('text').addEventListener('click', textData)
+
+
+        function textData(){
+
+            var xhr = new XMLHttpRequest()
+
+            if(xhr.readyState === 0){
+                console.log('Ready State Is 0: Request has not been initialized');
+            }
+
+            xhr.open('GET', 'data.txt', true);
+
+            if(xhr.readyState === 1){
+                console.log('Ready State is 1: Server connection establised')
+            }
+            xhr.onreadystatechange =() =>{
+                if(xhr.readyState === 2){
+                console.log('Ready state is 2: request received');
+            }
+
+            if(xhr.readyState === 3){
+                console.log('Ready State is 3: Processing request')
+            }
+
+            if(xhr.readyState === 4){
+                console.log('ReadyState is 4: Request finished and response is ready')
+                if(xhr.status === 200){
+                    console.log(xhr.responseText)
+                }
+                else{
+                    console.log('Something went wrong')
+                }
+            }
+            }
+                
+            
+        //    ========================event listener
+            // event = error
+            xhr.onerror = () => {
+                    console.log('Upload failed due to an error')
+            }
+
+            // amount of progress so far  / event:progress
+            xhr.onprogress = (e) => {
+                console.log(e.loaded);  // 22 char data.txt se load h gaya
+                console.log(e.total);  // total v 22 char hi hai
+            }
+
+            xhr.onloadstart = () => {
+                    console.log('Upload had began')
+            }
+            xhr.onloadend = () => {
+                    console.log('Transaction End')
+            }
+
+            xhr.onabort = () => {
+                    console.log('Abort')
+            }
+                
+            xhr.ontimeout = () => {
+                    console.log('timeout')
+            }
+
+            xhr.send()
+        }
+    </script>
+</body>
+</html>

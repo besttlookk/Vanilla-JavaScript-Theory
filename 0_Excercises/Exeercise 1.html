@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*  ============================QUEST 1 ================================================
+The goal of this exercise is to convert a string to a new string where each character in the new string is "(" 
+if that character appears only once in the original string, 
+or ")" if that character appears more than once in the original string. 
+Ignore capitalization when determining if a character is a duplicate.
+*/ 
+
+        //======first TRY=====
+        // const str = 'recede'
+        // const strArray = str.toLowerCase().split('')
+        // console.log(strArray)
+
+        // const output = strArray.reduce((acc, char, i, array) => {
+        //     const symbol = array.filter(letter => letter ===char).length < 2? '(' : ')'
+        //     return acc + symbol
+
+        // }, '')
+
+        // console.log(output)
+
+
+// ===================second Try===================
+
+// function duplicateEncode(word){
+//     return word.toLowerCase().split('').reduce((acc,char,i,array)=>{
+//     const symbol = array.filter(letter => letter === char).length < 2? '(' : ')';
+//     return acc + symbol;
+//     }, '')
+// }
+// console.log(duplicateEncode('recede'))
+
+// ==========solution given=======================
+
+// function duplicateEncode(word){
+//   return word
+//     .toLowerCase()
+//     .split('')
+//     .map( function (a, i, w) {
+//       return w.indexOf(a) == w.lastIndexOf(a) ? '(' : ')'
+//     })
+//     .join('');
+// }
+
+// console.log(duplicateEncode('recede'))
+
+
+// -================Solutio 2 =========================
+// function duplicateEncode(word){
+   
+//    var unique='';
+//    word = word.toLowerCase();
+//    for(var i=0; i<word.length; i++){
+//        if(word.lastIndexOf(word[i]) == word.indexOf(word[i])){
+//            unique += '(';
+//        }
+//        else{
+//            unique += ')';
+//        }
+//    }
+//    return unique;
+
+// }
+
+// console.log(duplicateEncode('recede'))
+
+
+
+// =========================================QUESTION 2 ====================================================
+/* 
+You live in the city of Cartesia where all roads are laid out in a perfect grid. 
+You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk.
+The city provides its citizens with a Walk Generating App on their phones --
+everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). 
+You always walk only a single block for each letter (direction) and you know it takes you one minute to traverse one city block,
+so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, 
+of course, return you to your starting point. Return false otherwise.
+
+//some test cases for you...
+Test.expect(isValidWalk(['n','s','n','s','n','s','n','s','n','s']), 'should return true');
+Test.expect(!isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e']), 'should return false');
+Test.expect(!isValidWalk(['w']), 'should return false');
+Test.expect(!isValidWalk(['n','n','n','s','n','s','n','s','n','s']), 'should return false');
+*/
+
+//----------Try 1:
+// function isValidWalk(walk) {
+    
+//     const nLength = walk.filter(char => char === 'n').length;
+//     const sLength = walk.filter(char => char === 's').length;
+//     const eLength = walk.filter(char => char === 'e').length;
+//     const wLength = walk.filter(char => char === 'w').length;
+
+//     if(nLength === sLength && eLength === wLength && walk.length === 10 ) return true;
+//     else return false;
+// }
+
+// console.log(isValidWalk(['n','s','n','s','n','e','w','s','n','s']))
+
+// ============better approch========
+
+// function isValidWalk(walk){
+//     function dirLength(char){
+//         return walk.filter(dir => dir === char).length;
+//     }
+
+//     if(dirLength('n') === dirLength('s') && dirLength('e') === dirLength('w') && walk.length === 10) return true
+//     else return false;
+// }
+
+// console.log(isValidWalk(['n','s','n','s','n','e','w','s','n','s']))
+
+
+// ===========================================Question 3================================================
+/*
+Given a positive integer n written as abcd... (a, b, c, d... being digits) and a positive integer p
+we want to find a positive integer k, if it exists, such as the sum of the digits of n taken to the successive powers of p is equal to k * n.
+
+In other words:
+
+Is there an integer k such as : (a ^ p + b ^ (p+1) + c ^(p+2) + d ^ (p+3) + ...) = n * k
+
+If it is the case we will return k, if not return -1.
+
+Note: n and p will always be given as strictly positive integers.
+
+
+digPow(89, 1) should return 1 since 8¹ + 9² = 89 = 89 * 1
+digPow(92, 1) should return -1 since there is no k such as 9¹ + 2² equals 92 * k
+digPow(695, 2) should return 2 since 6² + 9³ + 5⁴= 1390 = 695 * 2
+digPow(46288, 3) should return 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
+*/
+
+
+
+
+</script>
+
+</body>
+</html>

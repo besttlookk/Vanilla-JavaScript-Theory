@@ -28,8 +28,8 @@ const posts = [
 // }
 // // //call above function
 
-// getPosts();
 // createPost({ title: 'Post three', body: 'This is post three' });
+// getPosts();
 
 // we wanted to have create post first but due to delay..getpost request happened first..
 //.this kind of sitution can happen in real world..this is where asych programming comes in like 'CALLBACK ' funtion to handle it..it will hold 

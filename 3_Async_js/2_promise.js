@@ -27,7 +27,7 @@ function getPosts() {
               const error = true ;
             //   const error = true ;
              if(!error) {
-                 resolve();
+                 resolve();   // return ki jagah resolve ke use hota
              }
              else {
                  reject('Error: something went wrong')
@@ -39,7 +39,7 @@ function getPosts() {
      });
 }
 
-createPost({ title: 'Post three', body: 'This is post three'})
+createPost({ title: 'Post three', body: 'This is post three'})   // is function ke return me promise mil raha
   .then(getPosts)    // resolve()
   .catch((err) => console.log(err))   // reject()
 

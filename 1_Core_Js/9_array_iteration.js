@@ -1,27 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <script>
+const companies = [
+  { name: "Company One", category: "Finance", start: 1981, end: 2004 },
+  { name: "Company Two", category: "Retail", start: 1992, end: 2008 },
+  { name: "Company Three", category: "Auto", start: 1999, end: 2007 },
+  { name: "Company Four", category: "Retail", start: 1989, end: 2010 },
+  {
+    name: "Company Five",
+    category: "Technology",
+    start: 2009,
+    end: 2014,
+  },
+  { name: "Company Six", category: "Finance", start: 1987, end: 2010 },
+  { name: "Company Seven", category: "Auto", start: 1986, end: 1996 },
+  {
+    name: "Company Eight",
+    category: "Technology",
+    start: 2011,
+    end: 2016,
+  },
+  { name: "Company Nine", category: "Retail", start: 1981, end: 1989 },
+];
 
-const companies= [
-    {name: "Company One", category: "Finance", start: 1981, end: 2004},
-    {name: "Company Two", category: "Retail", start: 1992, end: 2008},
-    {name: "Company Three", category: "Auto", start: 1999, end: 2007},
-    {name: "Company Four", category: "Retail", start: 1989, end: 2010},
-    {name: "Company Five", category: "Technology", start: 2009, end: 2014},
-    {name: "Company Six", category: "Finance", start: 1987, end: 2010},
-    {name: "Company Seven", category: "Auto", start: 1986, end: 1996},
-    {name: "Company Eight", category: "Technology", start: 2011, end: 2016},
-    {name: "Company Nine", category: "Retail", start: 1981, end: 1989}
-  ];
-  
-  const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 //   ====================Topic To Cover====================================
 //   array.forEach()
@@ -51,7 +50,7 @@ const companies= [
 //  companies.forEach((value,index,array)=>)
 // console.log(companies[i]);  this is wrong bcoz it itself taking one value at a time. this looks nicer than "for" loop bcoz we dont have to initialize "i" and put condition.
 // console.log(company);
-      
+
 // --just iterating array
 // companies.forEach((company)=> {
 //     console.log(company.name);
@@ -80,7 +79,7 @@ const companies= [
 // }
 //  console.log(canDrink);
 
- //.....---.better way for loop.....
+//.....---.better way for loop.....
 // let canDrink = [];
 // for (let i = 0; i<ages.length; i++) {
 //      if (ages[i] >= 21) {
@@ -88,25 +87,23 @@ const companies= [
 //      }
 //  }
 //  console.log(canDrink);
- 
- //------------ with filter(better way)"
- // it also takes syncronous funtion like forEach()
+
+//------------ with filter(better way)"
+// it also takes syncronous funtion like forEach()
 //  let canDrink = [];
 //  canDrink = ages.filter((age) => {
 //     return age >= 21 })
 //  console.log(canDrink);
- 
- 
- //    ------BEST WAY-----
- //  let canDrink = [];
- //  canDrink = ages.filter(age => age>=21)
- //  console.log(canDrink);
 
- // filter comapany with retail
+//    ------BEST WAY-----
+//   let canDrink = [];
+//   canDrink = ages.map(age => age>=21)
+//   console.log(canDrink);
+
+// filter comapany with retail
 
 // const retailer = companies.filter(company=> company.category ==="Retail");
 // console.log (retailer);
-
 
 // -----------------------------MAP--------------------------------------------------------------------------
 
@@ -117,7 +114,6 @@ const companies= [
 // const map = companies.map(company => {
 //     // return `${company.name} [${company.start} - ${company.end}]`});
 // console.log(map)
-
 
 // --------------------------------------------SORT()---------------------------------------------------------
 
@@ -145,7 +141,6 @@ const companies= [
 
 // If the result is 0 no changes are done with the sort order of the two values.
 
-
 //------ Sort companies by start year(conditional sorting)[USE TERNARY OPERATOR]
 
 // const sortedCompanies  = companies.sort(function(c1, c2) {
@@ -158,7 +153,7 @@ const companies= [
 
 //          ---------better---
 // const sortedCompanies  = companies.sort((a,b)=> {a.start > b.start ? 1 : -1
-    
+
 //   });
 
 // console.log(sortedCompanies)
@@ -179,7 +174,6 @@ const companies= [
 // const sortAges = ages.sort((a,b)=> b-a);
 // console.log(sortAges);
 
-
 // ---------------------------------------Reduce()--------------------------------------------------------
 
 // The reduce() method runs a function on each array element to produce (reduce it to) a single value.
@@ -194,8 +188,6 @@ const companies= [
 // The item value
 // The item index
 // The array itself
-
-
 
 // add the ages together
 //  first with the for loop.
@@ -214,7 +206,6 @@ const companies= [
 
 // console.log(sum)
 
-
 // -------------------------Array.every()-----------------------------------
 // The every() method check if all array values pass a test.
 // Note that the function takes 3 arguments:
@@ -223,6 +214,9 @@ const companies= [
 // The item index
 // The array itself
 
+// const check = ages.every(age => age < 90)
+// console.log(check)
+
 //      RETURNS TRUE OR FALSE
 
 // // --------------------------Array.some()-------------------------------------------------
@@ -230,10 +224,11 @@ const companies= [
 
 // This example check if some array values are larger than 18:
 
-
 // --------------------------Array.indexOf()------------------------------------------------------------
 // The indexOf() method searches an array for an element value and returns its position.
 
+// const index = ages.indexOf(20)
+// console.log(index)
 
 // --------------------------Array.find()---------------------------------------------------------------
 // The find() method returns the value of the first array element that passes a test function.
@@ -241,11 +236,10 @@ const companies= [
 // This example finds (returns the value of) the first element that is larger than 18:
 // IN A WAY SIMILAR TO "filter()" but good thing is it stops finding when it get the desired result
 
+// const age50 = ages.find(age => age > 50)
+// console.log(age50) // 54
 
 // ----------------------------Array.find()-----------------------------------------------------------
 // The find() method returns the value of the 'first' array element that passes a test function.
 
 // This example finds (returns the value of) the first element that is larger than 18:
-    </script>
-</body>
-</html>
