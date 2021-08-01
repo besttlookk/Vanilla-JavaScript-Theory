@@ -108,3 +108,60 @@ CALL STACK:where our code executes using "executes conext"
 HEAP: Is a unstructered memory pool that stores all the object that our application needs
 
 */
+/*
+// ----------------------Scope / scope chain / lexical enviorment -----------------
+
+What is Scope?
+  Scope in JavaScript refers to the accessibility or visibility of variables. 
+  That is, which parts of a program have access to the variable or where the variable is visible.
+
+Why is Scope Important?
+  The main benefit of scope is security. That is, the variables can be accessed from only a certain area of the program. Using scope, we can avoid unintended modifications to the variables from other parts of the program.
+  The scope also reduces the namespace collisions. That is, we can use the same variable names in different scopes.
+
+Types of Scope
+There are three types of scope in JavaScript — 1) Global Scope, 2) Function Scope, and, 3) Block Scope.
+
+Scope Chain
+When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.
+If it’s still could not find the variable, it will either implicitly declare the variable in the global scope (if not in strict mode) or return an error.
+
+*/
+
+/*
+// ===========================This ==========================
+Special variable that is created for every execution context(every function).
+Takes the value of (points to ) the owner of the function in which the "this" keyword is used.
+
+'This' is not static . It depends on how the function is called , and its value is only assigned when the function is "actually called";
+
+4 different ways a function can be called
+
+  1. as a method(function attach to the object) : 
+       when we call this method inside the "method". it will simply point to the object in which the method is called
+
+  2. Simple function call: undefined(in strict mode) or Window object
+
+  3. Arrow function: this of surrounding function(lexical this). arrow function does not get its own this keywoard.
+
+  4. Event Listener :<DOM element that the handler is attached to>
+
+  5. new/ call / apply/ bind
+
+NOTE: 'this' will never points to the function itselt(in which it is used) and also not its variable envioroment
+
+
+
+*/
+
+/*
+// -----------------------argument object -----------------------
+
+we can sent more argument than a fynction receives
+
+// we dont get argument object for arrow function
+
+// it is not imporant in modern js
+
+
+*/

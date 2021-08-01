@@ -52,6 +52,12 @@ JavaScript variables can be converted to a new variable and another data type:
         Number("10 33");       // returns NaN
         Number("John");        // returns NaN
 
+        console.log(Number.parseInt('20px'))   //20
+        console.log(Number.parseInt('20px', 10))   //20 (second argument is base)
+        console.log(Number.parseInt('20.20px'))  // 20
+        console.log(Number.parseFloat('20.20px'))  //20.2
+
+        // now a days it is common to call this function on Number object
         parseInt("10 20 30");   // returns 10
         parseInt("10 years");   // returns 10
         parseInt("years 10");   // returns NaN 

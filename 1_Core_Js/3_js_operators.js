@@ -65,6 +65,9 @@ Operator	      Description
 ||	              logical or
 !	                logical not
 
+- used for short circit> || , &&
+- ?? : NULLISH COALSING
+
 */
 
 /*

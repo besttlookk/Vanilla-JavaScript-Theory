@@ -6,16 +6,15 @@
     <title>Parent Node</title>
 </head>
 <body id='myid1'>
-    <!-- <h1 id="myid2" class='myclass'>
-        we are learning JS 
+     <!-- <h1 id="myid2" class='myclass'>
+        we are learning JS  -->
         <!-- This is comment -->
      </h1>
     <p id="myid3">I am Paragraph</p>
 
     <section id="mysec">
-
-    </section> -->
-                                                                  <!-- HARRY -->
+        <h3>Hello world</h3>
+    </section> 
  <div class="container">
         <h1 id="heading"> Welcome to Code With Harry</h1>
         <div id="myfirst" class="child red good" id="first">child 1
@@ -44,7 +43,7 @@
     <div class="no">this is a dummy div2</div>
     <div class="no">this is a dummy div3</div>
     <script>
-        //=============Creating Nodes========================
+//==============================Creating Nodes========================
         // 1. createElement(element_name)
         // 2. createTextNode(string)
         // 3. createComment(string)
@@ -60,16 +59,34 @@
     // console.log(newComment);
 
     
-    // =========================appending exsisting element[moding <p> into section]=======================
+// =========================appending exsisting element[moding <p> into section]=======================
         
-        // let elm = document.getElementById('myid3')
-        // // console.log(elm)
-        //  let sec = document.getElementById('mysec')
-        //  console.log(sec)
+        let elm = document.getElementById('myid3')
+        console.log(elm)
+         let sec = document.getElementById('mysec')
+         console.log(sec)
+
+        // ---as a child[appendChild/append/prepend]
         //  sec.appendChild(elm)
+        //  sec.append(elm) // use append now instaed for appendChild
+        //  sec.prepend(elm)
         //  console.log(sec)
+         //View append VS appendChild
+
+        // NOTE: one element can be added at one position at a time....
+        // if we want to put that element at different place..we have to clone it first
+        sec.prepend(elm)
+        sec.append(elm.cloneNode(true)) // true means to copy child element too
+
+
+        // --------if we want to append as a sibling[before/after]
+        const para2 = document.createElement('p')
+        para2.innerText = "Im a sibling"
+        elm.before(para2)
+        elm.after(para2)
+
         
-        // =================appending new element in section==================================
+// =================appending new element in section==================================
         
         // let sec = document.getElementById('mysec')
         // newElm.appendChild(newText)
@@ -112,22 +129,22 @@
 
 
 
-        // =====================================================HARRY===========================================================================
+// =====================================================HARRY===========================================================================
 
-let element = document.createElement("li");
+// let element = document.createElement("li");
 // adding classname to the new element
-element.className = "childul";
-element.id ="newLi";
+// element.className = "childul";
+// element.id ="newLi";
 // element.innerHTML = "<b>this list is added</b>"
-element.innerText = "this list is added"
-element.style.textDecoration = "underline";
-element.style.color ="red";
+// element.innerText = "this list is added"
+// element.style.textDecoration = "underline";
+// element.style.color ="red";
 
 // now append the created element
-let ul = document.querySelector("ul.this");
+// let ul = document.querySelector("ul.this");
 // console.log(ul);
-ul.appendChild(element);
-console.log(element);
+// ul.appendChild(element);
+// console.log(element);
 // console.log(ul.lastElementChild);
 
 //-------------OR ---------------
@@ -150,26 +167,26 @@ console.log(ul.lastElementChild);
 
 //------------ REPLACING ELEMENT----------
 
-let elem2 = document.createElement("h3");
-console.log(elem2)
-elem2.id = "newHead";
-elem2.innerText = "This is the new heading";
-element.replaceWith(elem2);
+// let elem2 = document.createElement("h3");
+// console.log(elem2)
+// elem2.id = "newHead";
+// elem2.innerText = "This is the new heading";
+// element.replaceWith(elem2);
 
 
-let myul = document.getElementById("myul");
-myul.replaceChild(element,document.getElementById("fui"));
-myul.removeChild(document.getElementById("lui"));
+// let myul = document.getElementById("myul");
+// myul.replaceChild(element,document.getElementById("fui"));
+// myul.removeChild(document.getElementById("lui"));
 
-let pr = elem2.getAttribute("id");
-let pr1 = elem2.hasAttribute("class");
-console.log(pr,elem2,pr1)
+// let pr = elem2.getAttribute("id");
+// let pr1 = elem2.hasAttribute("class");
+// console.log(pr,elem2,pr1)
 
 // elem2.removeAttribute("id")
 // console.log(elem2)
 
-elem2.setAttribute("title","newTytle")
-console.log(elem2)
+// elem2.setAttribute("title","newTytle")
+// console.log(elem2)
     
         </script>
 </body>
